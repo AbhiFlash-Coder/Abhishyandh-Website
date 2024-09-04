@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title th:text="${pagetitle}">PowerBi</title>
+   <link rel="stylesheet" th:href="@{/css/styles.css}"/>
+   <link rel="icon" type="image/png" th:href="@{/images/A-images/logo.jpg}">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style th:inline="css">
+     .topnav {
+  overflow: hidden;
+  background-color: white;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.topnav a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: maroon;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #2196F3;
+  color: white;
+}
+
+.topnav-right {
+  float: right;
+}
+.topnav-left {
+  float: left;
+  display: flex;
+  align-items: center;
+}
+.topnav-left img {
+  height: 50px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 20px;
+}
+.contact-info {
+  display: flex;
+  align-items: center;
+}
+
+.contact-button {
+  background-color: maroon;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+
+/* Style the content */
+.content-box {
+  background-color: maroon;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+.content-box a {
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 10px;
+  position: relative;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  width: 300px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 8px;
+  padding: 10px 0;
+   
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+  color: #000080;
+}
+ 
+.content h2 {
+  color: #000080;
+  text-align: center;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.content p {
+  color: #000080;
+  text-align: center;
+  font-size: 18px;
+}
+.content-box {
+  
+  padding: 10px;
+  text-align: center;
+   
+  width: 100%;
+}
+.content-box a {
+  color: #000080;
+  text-align: center;
+  font-size: 15px;
+  padding: 10px;
+}
+.content-box a:hover {
+  background-color: #ddd;
+  color: black;
+}
+.content-box i {
+  font-size: 25px;
+  color: black;
+}
+.content-box-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.content-box-row-item {
+  background-color: maroon;
+  padding: 10px;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content-box-row-item i {
+  font-size: 20px;
+  color: white;
+  margin-right: 10px;
+}
+.content-box a{
+  color: white;
+   font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+/* Style the footer */
+.footer {
+  background-color: #f1f1f1;
+  padding: 10px;
+  text-align: center;
+  bottom: 0;
+  width: 100%;
+}
+
+.social {
+  margin-top: 10px;
+  padding-bottom: 20px;
+}
+.social a {
+  padding: 0px 10px;
+}
+.social a:hover {
+  background-color: #ddd;
+  color: black;
+}
+.social i {
+  font-size: 20px;
+  color: black;
+}
+.logo-a {
+  padding-top: 10px;
+}
+.login {
+  background-color: maroon;
+  border: none;
+  padding: 10px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 8px;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
+}
+.login:hover {
+  background-color: #3e8e41;
+}
+.logo {
+  color: #000080;
+  text-align: center;
+  font-size: 20px;
+}
+.logo-slogan {
+  color: #000080;
+  text-align: center;
+  font-size: 12px;
+}
+ 
+ 
+/*card trainings*/
+.container-Training{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.card-Training {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #00aced;
+  border-radius: 10px;
+  padding: 20px;
+  width: 150px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+.card-Training:hover{
+    transform: translateX(10px);
+}
+.card-Training svg {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.card-Training h3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+}
+
+
+ 
+
+/*popup*/
+.popup {
+  display: none;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  z-index: 1000;
+  max-width: 400px;
+  width: 100%;
+  height: 320px;
+}
+
+.popup-content {
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: maroon;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.popup h2 {
+  color: maroon;
+  margin-bottom: 20px;
+}
+
+ 
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 999;
+}
+.container-path {
+  width: 350px;
+  height: 470px;
+  background-color: #ffffff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+.course-title-path {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.course-list-path {
+  margin-top: 20px;
+  margin-left: 20px;
+  list-style: none;
+  padding: 0;
+}
+.course-list-path li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.course-list-path li::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background-color: #00ff00;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.certificate {
+  width: 40px;
+  height: 40px;
+  margin-left: 20px;
+  margin-top: 20px;
+   
+  background-size: cover;
+  border-radius: 50%;
+}
+.certificate-text {
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+/*Home Image*/
+.hero-section {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .image-container {
+      position: relative;
+      width: 60%;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: auto;
+    }
+
+    .image-overlay {
+      position: absolute;
+      top: 10px;
+      left: 50px;
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 300px;
+    }
+
+    .image-overlay h2 {
+      font-size: 30px;
+      margin-bottom: 10px;
+      color: white;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    .image-overlay p {
+      font-size: 16px;
+      color: white;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    .java-info-container {
+      width: 35%;
+      background-color: #f8f9fa;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .java-info-container h3 {
+      color: maroon;
+      margin-bottom: 15px;
+    }
+
+    .java-info-container ul {
+      padding-left: 20px;
+    }
+
+    .java-info-container li {
+      margin-bottom: 10px;
+    }
+    /*download cirricullum*/
+    .btn-cirricullum{
+      width: 300px;
+      height: 40px;
+      background-color: maroon;
+      color: white;
+      font-family: 'Times New Roman', Times, serif;
+      font-weight: bold;
+      font-size: 20px;
+      border-radius: 6px;
+      border: 1px solid white;
+      box-shadow: 0 0 8px;
+    }
+    .btn-cirricullum:hover{
+      background-color: navy;
+      transform: translateY(10px);
+    }
+ 
+
+/*card trainings*/
+.container-Training{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.card-Training {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #00aced;
+  border-radius: 10px;
+  padding: 20px;
+  width: 150px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+.card-Training:hover{
+    transform: translateX(10px);
+}
+.card-Training svg {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.card-Training h3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+}
+ 
+  
+
+/*paragraph IT*/
+.para-IT{
+  text-align: center;
+   font-size: 30wpx;
+    color: #ffffff;
+     margin-top: 10px;
+     font-family: 'Times New Roman', Times, serif;
+     font-weight: bold;
+}
+ /*CourseInside*/
+ .body-Course-Inside{
+  margin: 0;
+   
+  background-repeat: no-repeat;
+   background-size: 100% 100%;
+  font-family: Arial, sans-serif;
+   
+}
+
+.container-Course-Inside{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  height: 50vh;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.text {
+  color: white;
+  text-align: left;
+}
+
+.button-container-Course {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+.button-container-Course p{
+  color: white;
+}
+
+.button-Course {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+  
+
+ 
+  /*Features of Trainings*/
+  .container-IT-updates {
+            display: flex;
+            padding: 50px;
+            justify-content: center;
+            flex-wrap: wrap; 
+            background-color: #F3F4F9;
+        }
+        .card-IT {
+            width: 200px;
+            height: 450px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        .image-container-IT {
+            width: 100%;
+            height: 130px;
+            border-radius: 10px; 
+            overflow: hidden;  
+            border: 2px solid rgba(0, 0, 0, 0.1);  
+            margin-bottom: 10px; 
+        }
+        .image-container-IT img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;  
+        }
+        h3 {
+            margin: 10px 0;
+            color: maroon;
+            font-family: 'Times New Roman', Times, serif;
+            
+        }
+        p {
+            margin: 0;
+            font-family: 'Times New Roman', Times, serif;
+            color: gray;
+             
+        }
+        @media (max-width: 600px) {
+            .card-IT {
+                width: 100%;
+                max-width: 300px;  
+            }
+        }
+        @keyframes slideIn {
+            0% {
+                opacity: 0;
+                transform: translateX(50%);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .card-IT.in-view {
+            animation: slideIn 1s forwards;
+        }
+        .features-Trainings{
+          text-align: center;
+          font-family: 'Times New Roman', Times, serif;
+          font-weight: bold;
+          font-size: 28px;
+        }
+        
+        
+ /*Features of Trainings*/
+  .container-IT-updates {
+            display: flex;
+            padding: 50px;
+            justify-content: center;
+            flex-wrap: wrap; 
+            background-color: #F3F4F9;
+        }
+        .card-IT {
+            width: 230px;
+            height: 600px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        .image-container-IT {
+            width: 100%;
+            height: 130px;
+            border-radius: 10px; 
+            overflow: hidden;  
+            border: 2px solid rgba(0, 0, 0, 0.1);  
+            margin-bottom: 10px; 
+        }
+        .image-container-IT img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;  
+        }
+        h3 {
+            margin: 10px 0;
+            color: maroon;
+            font-family: 'Times New Roman', Times, serif;
+            
+        }
+        p {
+            margin: 0;
+            font-family: 'Times New Roman', Times, serif;
+            color: gray;
+            font-size: 12px;
+             
+        }
+        @media (max-width: 600px) {
+            .card-IT {
+                width: 100%;
+                max-width: 300px;  
+            }
+        }
+        @keyframes slideIn {
+            0% {
+                opacity: 0;
+                transform: translateX(50%);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .card-IT.in-view {
+            animation: slideIn 1s forwards;
+        }
+        .features-Trainings{
+          text-align: center;
+          font-family: 'Times New Roman', Times, serif;
+          font-weight: bold;
+          font-size: 28px;
+        }
+
+/*footer*/
+.dummy_page {
+   height:100px;
+   width: 100%;
+   background-color: #74C69D;
+   text-align: center;
+   box-sizing: border-box;
+   padding: 60px 0px;
+    
+}
+.footer {
+   width: 100%;
+   position: relative;
+   height: auto;
+   background-color: white;
+   overflow: hidden;
+}
+.footer .col {
+   width: 190px;
+   height: auto;
+   float: left;
+   box-sizing: border-box;
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   padding: 0px 20px 20px 20px;
+    
+}
+.footer .col h1 {
+   margin: 0;
+   padding: 0;
+   font-family: inherit;
+   font-size: 12px;
+   line-height: 17px;
+   padding: 20px 0px 5px 0px;
+   color: rgba(255,255,255,0.2);
+   font-weight: normal;
+   text-transform: uppercase;
+   letter-spacing: 0.250em;
+}
+.footer .col ul li {
+list-style-type: none;
+margin: 0;
+padding: 0;
+}
+.footer .col ul li {
+   color: #999999;
+   font-size: 14px;
+   font-family: inherit;
+   font-weight: bold;
+   padding: 5px 0px 5px 0px;
+   cursor:pointer;
+   transition: .2s;
+   -webkit-transition: .2s;
+   -moz-transition: .2s;
+}
+.social ul li {
+   display: inline-block;
+   padding-right: 5px !important;
+}
+.footer .col ul li:hover {
+   color: black;
+   transition: .1s;
+   -webkit-transition: .1s;
+   -moz-transition: .1s;
+}
+.clearfix {
+   clear: both;
+}
+@media only screen and (min-width:1280px) {
+   .contain {
+       width: 1200px;
+       margin: 0 auto;
+   }
+}
+@media only screen and (max-width:1139px) {
+.contain .social {
+width: 1000px;
+display: block;
+}
+.social h1{
+   margin: 0px;
+}
+}
+@media only screen and (max-width:950px) {
+   .footer .col {
+width: 33%;
+   }
+   .footer .col h1 {
+       font-size: 14px;
+   }
+   .footer .col ul li{
+       font-size: 13px;
+   }
+}
+@media only screen and (max-width:500px) {
+   .footer .col {
+       width: 50%;
+   }
+   .footer .col h1{
+       font-size: 14px;
+   }
+   .footer .col ul li {
+       font-size: 13px;
+   }
+}
+@media only screen and (max-width:340px) {
+   .footer .col{
+       width: 100%;
+   }
+}
+.social-media {
+   cursor: pointer;
+}
+
+/*copy right*/
+.copyright-abhishyandh{
+   background-color: #050510;
+   color: #999999;
+   text-align: center;
+   padding: 10px 0;
+   width: 100%;
+   font-size: 14px;
+}  
+.copyright p {
+   margin: 0;
+}
+/*popup courses*/
+.popup {
+  display: none;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  z-index: 1000;
+  max-width: 400px;
+  width: 100%;
+  height: 320px;
+}
+
+.popup-content {
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: maroon;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.popup h2 {
+  color: maroon;
+  margin-bottom: 20px;
+}
+
+ 
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 999;
+}
+.container-path {
+  width: 350px;
+  height: 470px;
+  background-color: #ffffff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+.course-title-path {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.course-list-path {
+  margin-top: 20px;
+  margin-left: 20px;
+  list-style: none;
+  padding: 0;
+}
+.course-list-path li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.course-list-path li::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background-color: #00ff00;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.certificate {
+  width: 40px;
+  height: 40px;
+  margin-left: 20px;
+  margin-top: 20px;
+   
+  background-size: cover;
+  border-radius: 50%;
+}
+.certificate-text {
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+ 
+</style>
+</head>
+<body>
+    <div class="topnav">
+        <div class="topnav-left">
+            <img th:src="@{/images/A-images/logo.jpg}" alt="Logo">
+        </div>
+        <center>
+            <h3>Contact for Course Enquiry : 
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="green" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
+                </svg> 
+                <span>+91 8897830910</span>
+            </h3>
+        </center>
+        <a th:href="@{/register}"><button class="contact-button">Login</button></a>
+    </div>
+
+    <!-- Social Media Icons -->
+    <div class="social-icons">
+        <!-- WhatsApp -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="green" class="bi bi-whatsapp" viewBox="0 0 16 16">
+            <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+        </svg>
+        <!-- GitHub -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+        </svg>
+        <!-- Instagram -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="maroon" class="bi bi-instagram" viewBox="0 0 16 16">
+            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+        </svg>
+        <!-- Facebook -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="blue" class="bi bi-facebook" viewBox="0 0 16 16">
+            <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+        </svg>
+    </div>
+
+    <div class="content">
+        <div class="content-box" style="background-color: maroon;">
+            <a th:href="@{/ITTRAININGS}">Home</a> <span style="color: white;">|</span> 
+            <a th:href="@{/AboutAbhishyandh}">About Us</a> <span style="color: white;">|</span> 
+            <div class="dropdown">
+                <a href="#contact">Courses Offering</a>
+                <div class="dropdown-content">
+                    <a th:href="@{/FullStackJavaCourse}" style="color: black;">Full Stack Java Course</a>
+                    <a th:href="@{/PythonFullStack}" style="color: black;">Full Stack Python Course</a>
+                    <a th:href="@{/DotNetCourse}" style="color: black;">Dot Net Course</a>
+                    <a th:href="@{/PowerBi}" style="color: black;">Power BI</a>
+                    <a th:href="@{/ArtificialIntelligenceMl}" style="color: black;">Artificial Intelligence / Machine Learning</a>
+                </div>
+            </div> <span style="color: white;">|</span>  
+            <div class="dropdown">
+                <a href="#contact">Trainings Benefits</a>
+                <div class="dropdown-content">
+                    <a th:href="@{/}" style="color: black;">Training Certificate</a>
+                    <a th:href="@{/}" style="color: black;">Placement Assistance</a>
+                    <a th:href="@{/}" style="color: black;">Internship Program</a>
+                    <a th:href="@{/}" style="color: black;">Real-Time Industry Projects</a>
+                    <a th:href="@{/}" style="color: black;">Interview Preparation</a>
+                </div>
+            </div> <span style="color: white;">|</span>  
+            <a th:href="@{/Careers}">Careers</a> <span style="color: white;">|</span>  
+            <a th:href="@{/ITSERVICES}">Services</a> <span style="color: white;">|</span>  
+            <a th:href="@{/Website}">Contact Us</a>
+        </div>
+        
+        
+      <!--Course start--> 
+      <div class="hero-section">
+        <div class="image-container">
+            <img th:src="@{/images/A-images/PowerBIImageCourseInside.jpg}" alt="Java Course Image">
+            <a th:href="@{/images/A-images/Power BI cirricullum.pdf}" download="PowerBi Cirricullum"><button class="btn-cirricullum" style="text-decoration: none;>Download Curriculum</button></a>
+            <div class="image-overlay">
+                  <h2>Master Power BI Course at Abhishyandh</h2>
+        <p>Become a proficient Power BI developer with our comprehensive course. Learn from industry experts and build real-world projects.</p>
+            </div>
+        </div>
+        <div class="java-info-container">
+           <h3>Why Learn PowerBi in 2024?</h3>
+      <ul>
+        <li><strong>Increasing Data-Driven Decision-Making : </strong> In the era of big data, organizations are increasingly relying on data-driven decision-making to stay competitive.</li>
+        <li><strong>Seamless Integration with Microsoft Ecosystem : </strong> Power BI integrates seamlessly with other Microsoft products such as Excel, Azure, and SQL Server. This integration streamlines data workflows, making it easier to import, analyze, and visualize data from various sources. </li>
+        <li><strong>User-Friendly Interface and Accessibility : </strong> Power BI is renowned for its user-friendly interface that accommodates both novice and advanced users. The drag-and-drop functionality and intuitive design make it accessible for users without a technical background.</li>
+        <li><strong>Advanced Data Visualization Capabilities : </strong> Power BI offers a wide array of visualization options that help in presenting data in a meaningful way. From basic charts and graphs to complex interactive dashboards, Power BI's visualizations are designed to highlight trends, patterns, and insights.</li>
+         
+          <li><strong>Cost-Effective Solution : </strong> Power BI offers a cost-effective solution for data analysis and visualization. With options for both free and pro versions, it provides flexibility for different business needs and budgets.</li>  
+        <li><strong>Continuous Updates and Community Support : </strong>Microsoft continually updates Power BI with new features and improvements, ensuring it remains at the forefront of BI technology. </li>  
+        </ul>
+        </div>
+    </div>
+
+    <!-- Spacing -->
+    <div style="padding: 70px;"></div>
+
+    <div class="body-Course-Inside" th:style="'background-image: url(' + @{/images/A-images/PowerBIImageCoursePage.png} + ');'">
+        <div class="container-Course-Inside">
+            <div class="text">
+                <h1>Python Fullstack Development</h1>
+                <p style="color: white;">Live Course Free Preview Available</p>
+                <a th:href="@{/Website}" style="text-decoration: none;">
+                    <button class="button-Course">Contact Us</button>
+                </a>
+            </div>
+            <div class="button-container-Course">
+                <p>Duration: 3 Months</p>
+                <p>Price: ₹30000</p>
+                <p>Rating: ★★★★☆</p>
+                <button class="button-Course">Watch Demo Class</button>
+                <a th:href="@{/images/A-images/Power BI cirricullum.pdf}" download="PowerBi Cirricullum"><button class="button-Course">Download Course Content</button></a>
+            </div>
+        </div>
+    </div>
+ 
+        <!--caraseol-->
+        <div class="carousel-container">
+            <div class="carousel">
+                <div th:each="slide : ${carouselSlides}" class="carousel-item">
+                    <img th:src="@{${slide.imageUrl}}" th:alt="${slide.altText}">
+                </div>
+            </div>
+        </div>
+
+        <div class="padding" style="padding: 30px;">
+</div>
+
+<div class="container-Training">
+    <div class="card-Training">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-book-half" viewBox="0 0 16 16">
+            <path d="M8.5 2.687c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783"/>
+        </svg>
+        <h3>Theory</h3>
+    </div>
+    <div class="card-Training">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-laptop" viewBox="0 0 16 16">
+            <path d="M13.5 3a.5.5 0 0 1 .5.5V11H2V3.5a.5.5 0 0 1 .5-.5zm-11-1A1.5 1.5 0 0 0 1 3.5V12h14V3.5A1.5 1.5 0 0 0 13.5 2zM0 12.5h16a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5"/>
+        </svg>
+        <h3>Practicals</h3>
+    </div>
+    <div class="card-Training">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-code-slash" viewBox="0 0 16 16">
+            <path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0m6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0"/>
+        </svg>
+        <h3>Tasks</h3>
+    </div>
+    <div class="card-Training">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-card-checklist" viewBox="0 0 16 16">
+            <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2z"/>
+            <path d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0M7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0"/>
+        </svg>
+        <h3>Certification</h3>
+    </div>
+    <div class="card-Training">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bar-chart" viewBox="0 0 16 16">
+            <path d="M4 11H2v3h2zm5-4H7v7h2zm5-5v12h-2V2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1z"/>
+        </svg>
+        <h3>Resume preparation</h3>
+    </div>
+    <div class="card-Training">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
+            <path d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a10 10 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733q.086.18.138.363c.077.27.113.567.113.856s-.036.586-.113.856c-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.2 3.2 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.8 4.8 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z"/>
+        </svg>
+        <h3>Attend interviews</h3>
+    </div>
+</div>
+ 
+<!--features-->
+<div class="features-Trainings">
+    <h2 style="color: maroon; font-family: 'Times New Roman', Times, serif;font-weight: bold; font-size: 35px;">Our Training Features</h2>
+</div>
+<div class="container-IT-updates">
+    <!-- Expert Industry Trainers -->
+    <div class="card-IT">
+        <div class="image-container-IT">
+            <img th:src="@{/images/A-images/enhancedsecurity.webp}" alt="Expert Industry Trainers">
+        </div>
+        <h3 style="color: maroon; font-family: 'Times New Roman', Times, serif; font-size: 1rem;">Expert Industry Trainers</h3>
+        <p>
+            <span style="color: navy">Industry Experts:</span><span style="color: grey;"> Trainers with extensive industry experience and up-to-date knowledge of current technologies.<br></span>
+            <span style="color: navy;">Certifications:</span> <span style="color: grey;">Trainers often hold relevant industry certifications and qualifications.<br></span>
+            <span style="color: navy;">Personal Mentorship:</span><span style="color: grey;"> One-on-one mentorship and guidance to address individual learning needs.</span>
+        </p>
+    </div>
+
+    <!-- Comprehensive Curriculum -->
+    <div class="card-IT">
+        <div class="image-container-IT">
+            <img th:src="@{/images/A-images/domainexpertise.jpeg}" alt="Comprehensive Curriculum">
+        </div>
+        <h3 style="color: maroon; font-family: 'Times New Roman', Times, serif; font-size: 1rem;">Comprehensive Curriculum</h3>
+        <p>
+            <span style="color: navy;">Latest Technologies:</span> <span style="color: grey;">Cover the latest technologies and industry trends, including emerging fields like AI, machine learning, and cloud computing.<br></span>
+            <span style="color: navy;">Structured Learning Path:</span><span style="color: grey;"> Well-defined learning paths from basic to advanced levels to ensure progressive learning.<br></span>
+            <span style="color: navy;">Hands-On Training:</span> <span style="color: grey;">Practical labs and real-world projects that reinforce theoretical concepts.</span>
+        </p>
+    </div>
+
+    <!-- Customized Training Approach -->
+    <div class="card-IT">
+        <div class="image-container-IT">
+            <img th:src="@{/images/A-images/responsivesupport.jpeg}" alt="Customized Training Approach">
+        </div>
+        <h3 style="color: maroon; font-family: 'Times New Roman', Times, serif; font-size: 1rem;">Customized Training Approach</h3>
+        <p>
+            <span style="color: navy;">Tailored Courses:</span><span style="color: grey;"> Customizable training programs based on the specific needs and goals of individuals or corporate clients.<br></span>
+            <span style="color: navy;">Skill-Based Training:</span> <span style="color: grey;">Focused training on specific skills or technologies relevant to current job market demands.</span>
+        </p>
+    </div>
+
+    <!-- Continuous Learning Updates -->
+    <div class="card-IT">
+        <div class="image-container-IT">
+            <img th:src="@{/images/A-images/softwareupdate.jpeg}" alt="Continuous Learning Updates">
+        </div>
+        <h3 style="color: maroon; font-family: 'Times New Roman', Times, serif; font-size: 1rem;">Continuous Learning Updates of IT Industry</h3>
+        <p>
+            <span style="color: navy">Ongoing Education:</span><span style="color: grey;"> Opportunities for continuous learning through updated course content and additional modules.<br></span>
+            <span style="color: navy">Drive Access:</span> <span style="color: grey;">Access to resources and updates even after course completion to keep skills current.</span>
+        </p>
+    </div>
+
+    <!-- Real World Projects -->
+    <div class="card-IT">
+        <div class="image-container-IT">
+            <img th:src="@{/images/A-images/useeinterface.jpeg}" alt="Real World Projects">
+        </div>
+        <h3 style="color: maroon; font-family: 'Times New Roman', Times, serif; font-size: 1rem;">Real World Projects</h3>
+        <p>
+            <span style="color: navy">Industry Projects:</span><span style="color: grey;"> Projects based on real-world problems to provide practical experience.<br></span>
+            <span style="color: navy">Collaborative Work:</span><span style="color: grey;"> Opportunities to work on team projects to simulate real-world working conditions.<br></span>
+            <span style="color: navy">Portfolio Development:</span><span style="color: grey;"> Building a portfolio of completed projects to showcase skills to potential employers.</span>
+        </p>
+    </div>
+</div>
+
+    
+
+    <!-- Footer Section -->
+     <div class="padding" style="padding: 30px;"></div>
+
+    <section> 
+        <div class="dummy_page" id="footer">
+            <h3 style="color: white;">Abhishyandh Global Solutions Pvt Ltd</h3>
+        </div>
+        <div class="footer">
+            <img th:src="@{/images/A-images/logo.jpg}" style="width: 100px; height: 100px;">
+            <div class="contain">
+                <div class="col">
+                    <h1 style="color: black;">Our Company</h1>
+                    <ul class="abhishyandh-f">
+                        <li>Home</li>
+                        <li>About</li>
+                        <li>Services</li>
+                        <li>IT Services</li>
+                        <li>Hr Services</li>
+                        <li>BPO Services</li>
+                        <a href="Contact-Abhishyandh.html"><li>Get In Touch</li></a>
+                    </ul>
+                </div>
+                <div class="col">
+                     
+                    <h1 style="color: black;">We Develop</h1>
+                    <ul>
+                        <li>Web Development</li>
+                        <li>Java Development</li>
+                        <li>Python Development</li>
+                        <li>Mobile Development</li>
+                        <a href="Contact-Abhishyandh.html"><li>Get In Touch</li></a>
+                        
+                    </ul>
+                </div>
+                <div class="col">
+                     
+                    <h1 style="color: black;">Contact ABS</h1>
+                    <ul>
+                        <li>+91 8897830910</li>
+                        <li>040-6685-8189</li>
+                        <li>info@abhishyandh.co.in</li>
+                        <li>https://abhishyandh.co.in</li>
+                        <a href="Contact-Abhishyandh.html"><li>Get In Touch</li></a>
+                    </ul>
+                </div>
+                <div class="col">
+                     
+                    <h1 style="color: black;">Support</h1>
+                    <ul>
+                        <li>Web Mails</li>
+                        <li>hr@abhishyandh.co.in</li>
+                        <li>info@abhishyandh.co.in</li>
+                        <a href="Contact-Abhishyandh.html"><li>Get In Touch</li></a>
+                    </ul>
+                </div>
+                <div class="col">
+                    
+                    <h1 style="color: black;">Resources</h1>
+                    <ul>
+                        <li>LinkedIn</li>
+                        <li>Twitter</li>
+                        <li>Instagram</li>
+                        <li>Youtube</li>
+                        <li>FaceBook</li>
+                        <a href="Contact-Abhishyandh.html"><li>Get In Touch</li></a>
+                    </ul>
+                </div>
+                     <div class="col">
+                        
+                    <h1 style="color: black;">Follow Us On</h1>
+                    <ul>
+                        <p class="social-media">
+                            <a href="https://www.linkedin.com/company/abhishyandh-global-solutions/"><i class="bi bi-linkedin text-dark mx-1"></i></a>
+                            <a href="https://github.com/AbhiFlash-Coder"><i class="bi bi-github text-dark-mx-1"></i></a>
+                            <a href=""><i class="bi bi-twitter text-dark mx-1"></i></a>
+                            <a href="https://www.facebook.com/share/BxpiEC8qP9PP6ycj/?mibextid=qi2Omg"><i class="bi bi-facebook text-dark mx-1"></i></a>
+                            <a href="https://www.instagram.com/abhishyandh?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="bi bi-instagram text-dark mx-1"></i></a>
+                            <a href-""><i class="bi bi-youtube text-dark mx-1"></i></a>
+                          
+                        </p>  
+                    </ul>
+                <div class="clearfix">
+                     
+            </div>
+             
+        </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="copyright-abhishyandh">
+        <p>&copy; 2023 Abhishyandh. All rights reserved.</p>
+    </div>
+
+
+
+
+<div class="overlay" id="overlay"></div>
+<div class="popup" id="contactPopup">
+    <div class="container-path">
+        <button class="close-btn" onclick="closePopup()">&times;</button>
+        <img th:src="@{/images/A-images/logo.jpg}" style="width: 50px; height: 50px;">
+        <div class="course-title-path">Course Path<i class="bi bi-arrow-right-circle-fill"></i>(Full Stack Java Course)</div>
+        <ul class="course-list-path">
+            <!-- Ensure 'courseList' is not null before iterating -->
+            <th:block th:if="${courseList != null}">
+                <li th:each="course : ${courseList}" th:text="${course}"></li>
+            </th:block>
+            <th:block th:unless="${courseList != null}">
+                <li>No courses available</li>
+            </th:block>
+        </ul>
+        <div class="certificate"></div>
+        <div class="certificate-text">Course Completion Certificate</div>
+    </div>
+</div>
+
+
+    <script th:inline="javascript">
+		
+		
+		 function showPopup() {
+  document.getElementById('overlay').style.display = 'block';
+  document.getElementById('contactPopup').style.display = 'block';
+}
+
+function closePopup() {
+  document.getElementById('overlay').style.display = 'none';
+  document.getElementById('contactPopup').style.display = 'none';
+}
+
+// Show popup after 5 seconds
+setTimeout(showPopup, 3000);
+ 
+         
+document.addEventListener('DOMContentLoaded', function() {
+      const container = document.querySelector('.container-IT-Trainings-Course');
+      window.addEventListener('scroll', function() {
+        const scrollPosition = window.scrollY;
+        if (scrollPosition > 50) {
+          container.classList.add('scrolled');
+        } else {
+          container.classList.remove('scrolled');
+        }
+      });
+    });
+
+
+ //Features of Trainings
+  function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        // Function to add class 'in-view' when element is in viewport
+        function handleScroll() {
+            const cards = document.querySelectorAll('.card-IT');
+            cards.forEach(card => {
+                if (isInViewport(card)) {
+                    card.classList.add('in-view');
+                }
+            });
+        }
+
+        // Add scroll event listener
+        window.addEventListener('scroll', handleScroll);
+
+        // Trigger scroll event on page load to animate elements already in view
+        window.addEventListener('load', handleScroll);
+ </script>
+</body>
+</html>

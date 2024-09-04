@@ -1,0 +1,3136 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Abhishyandh Global Solutions</title>
+    <link rel="stylesheet"/>
+    <link rel="icon" type="image/png" href="A-images/logo.jpg" th:href="@{/images/A-images/logo.jpg}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style th:inline="css">
+		 html,body {
+  scroll-behavior: smooth;   
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+
+body {
+font-family: "Red Hat Display", sans-serif;
+font-size: 16px;
+cursor: pointer;
+}
+* {
+margin: 0;
+padding: 0;
+ max-width: 100%;
+    box-sizing: border-box;
+}		
+.btn-navbar{
+    background-color: maroon;
+    color: white;
+    font-weight: bold;
+   border-radius: 4px;
+   border: 1px solid white;
+   height: 35px;
+   width: 100px;
+    font-size: 0.8rem; 
+}
+.btn-navbar:hover{
+    background-color: #122f47;
+}
+:root {
+ --primary: #0969DA;
+ --background: white;
+ --gray: #847F90;
+ --white: black;
+ --navbar-height: 3.75rem;
+                
+ }
+.menu__wrapper-abhishyandh-N {
+display: flex;
+position: fixed; 
+flex-direction: row;
+justify-content: flex-end; 
+width: 100vw;
+z-index: 2;
+gap: 2rem;
+background: var(--background);
+height: var(--navbar-height);
+padding: 0 2rem;
+align-items: center;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+transition: box-shadow 0.3s ease; 
+top: 0; 
+left: 0;
+right: 0;
+background: var(--background);
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+transition: box-shadow 0.3s ease;
+z-index: 1000; 
+
+width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
+            }
+
+            .menu__wrapper-abhishyandh-N.scrolled {
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
+            }
+
+            .menu__bar-abhishyandh-N {
+                display: flex;
+                gap: 1.5rem;
+                align-items: center;
+                margin-right: auto; 
+            }
+
+            .logo-abhishyandh-N {
+                
+                cursor: pointer;
+            }
+
+            .logo-abhishyandh-N svg {
+                fill: var(--white);
+            }
+
+            .navigation-abhishyandh-N {
+                display: flex;
+                flex-direction: row;
+                list-style-type: none;
+                align-items: center;
+                gap: 2rem;
+                background: var(--background);
+            }
+             
+
+            .navigation-abhishyandh-N > li {
+                display: flex;
+                position: relative;
+                cursor: pointer;
+                align-items: center;
+                height: 2.625rem;
+            }
+            .navigation-abhishyandh-N li::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: maroon;
+    transition: width 0.3s ease;  
+}
+.navigation-abhishyandh-N li:hover::after {
+    width: 100%;
+}
+
+.navigation-abhishyandh-N > li > button > svg {
+                fill: var(--white);
+                color: var(--white);
+                transition: all 0.2s ease-in-out;
+            }
+
+.navigation-abhishyandh-N > li > a {
+                color: var(--white);
+                font-size: 0.875rem;
+                text-decoration: none;
+                transition: all 0.2s ease-in-out;
+            }
+
+.navigation-abhishyandh-N > li > button {
+                color: var(--white);
+                border-bottom: 2px solid transparent;
+                transition: all 0.3s ease;
+                text-decoration: none;
+                border: none;
+                cursor: pointer;
+                font-weight: 500;
+                gap: 0.25rem;
+                opacity: 1;
+                align-items: center;
+                font-size: 0.875rem;
+                flex-wrap: nowrap;
+                white-space: nowrap;
+                background: none;
+                display: flex;
+                padding: 0.185rem 0;
+                position: relative;
+                transition: all 0.2s ease-in-out;
+            }
+
+.dropdown-abhishyandh-N {
+                position: absolute;
+                top: 2.625rem;
+                min-width: 15rem;
+                border-radius: 0.5rem;
+                background: white;
+                display: none;
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 5px 30px rgba(27, 31, 35, 0.1), 0 0 1px rgba(27, 31, 35, 0.4), 0 1px 2px rgba(27, 31, 35, 0.15);
+                z-index: 2;
+                animation: fadeIn 0.2s ease-in-out;
+            }
+
+            
+
+.dropdown-abhishyandh-N h3 {
+                font-size: 0.875rem;
+                font-weight: 600;
+                margin-bottom: 0.5rem;
+            }
+
+            .list-menu-items-abhishyandh-N {
+                display: flex;
+                list-style-type: none;
+                flex-direction: column;
+                gap: 0.25rem;
+            }
+
+.list-menu-items-abhishyandh-N > li > a {
+                display: flex;
+                gap: 1rem;
+                font-size: 0.875rem;
+                width: 100%;
+                color: var(--gray);
+                text-decoration: none;
+            }
+
+.list-menu-items-abhishyandh-N > li > a:hover {
+                color: var(--primary);
+            }
+
+.list-items-with-description-abhishyandh-N {
+                list-style-type: none;
+            }
+
+.list-items-with-description-abhishyandh-N li {
+                display: flex;
+                padding: 0.25rem;
+                gap: 1rem;
+                width: 100%;
+            }
+
+.list-items-with-description-abhishyandh-N li:hover {
+                color: var(--primary);
+            }
+
+.list-items-with-description-abhishyandh-N li svg {
+                width: 1rem;
+                height: 1rem;
+                stroke: var(--primary);
+            }
+
+.item-title-abhishyandh-N h3 {
+                font-size: 0.875rem;
+                font-weight: 600;
+            }
+
+.item-title-abhishyandh-N p {
+                font-size: 0.75rem;
+            }
+
+.navigation-abhishyandh-N > li:hover .dropdown-abhishyandh-N {
+                display: flex;
+                opacity: 1;
+            }
+
+.action-buttons-abhishyandh-N {
+                display: flex;
+                gap: 0.5rem;
+                align-items: center;
+                flex-wrap: nowrap;
+            }
+
+.action-buttons-abhishyandh-N a {
+                white-space: nowrap;
+                padding: 0.25rem 0.5rem;
+                transition: all 0.2s ease-in-out;
+            }
+
+.action-buttons-abhishyandh-N a:hover {
+                opacity: .75;
+            }
+
+.secondary-abhishyandh-N {
+                background: none;
+                color: var(--white);
+                outline: none;
+                border: none;
+            }
+
+.primary-abhishyandh-N {
+                color: var(--white);
+                border-radius: 0.5rem;
+                border: 1px solid var(--white);
+            }
+
+.burger-menu-abhishyandh-N {
+                display: none;
+                outline: none;
+                border: none;
+                cursor: pointer;
+                background: transparent;
+            }
+
+.burger-menu-abhishyandh-N svg {
+                stroke: var(--white);
+            }
+        
+            /*hambueger*/
+@media screen and (max-width: 768px) {
+    .navigation-abhishyandh-N {
+        display: none;
+        position: absolute;
+        top: var(--navbar-height);
+        left: 0;
+        width: 100%;
+        background: var(--background);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .navigation-abhishyandh-N.show {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navigation-abhishyandh-N > li {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .burger-menu-abhishyandh-N {
+        display: block;
+    }
+
+    .dropdown-abhishyandh-N {
+        position: static;
+        display: none;
+        width: 100%;
+        box-shadow: none;
+    }
+    .dropdown-abhishyandh-N.show {
+        display: block;
+    }
+
+    .navigation-abhishyandh-N > li:hover .dropdown-abhishyandh-N {
+        display: none;
+    }
+
+    .navigation-abhishyandh-N > li > button {
+        width: 100%;
+        text-align: left;
+    }
+}
+
+/*about*/
+
+
+ .container-abhishyandh {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-left: 20px;
+}
+
+.banner-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    
+}
+
+.padding {
+    padding: 20px;
+}
+
+h4 {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    color: maroon;
+}
+
+.about-content-abhishyandh {
+    display: flex;
+    justify-content: space-between;
+     align-items: center; /* Vertically center the items */
+    padding: 20px;   
+}
+
+.about-text-abhishyandh,
+.about-image-abhishyandh {
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+     padding: 70px;
+}
+
+.about-text-abhishyandh {
+   flex: 1;  
+    padding-right: 20px;  
+    transform: translateX(-100%); 
+    line-height: 1.6;
+    
+}
+
+.about-image-abhishyandh {
+    transform: translateX(100%);  
+     
+}
+
+.about-image-abhishyandh img {
+   max-width: 500px;
+    height: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+
+    
+}
+
+.btn-about {
+    background-color: maroon;
+    width: 300px;
+    height: 50px;
+    border-radius: 20px;
+    color: white;
+    font-size: 1.3rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    .about-content-abhishyandh {
+        flex-direction: column;
+    }
+
+    .about-text-abhishyandh, .about-image-abhishyandh {
+        transform: translateX(0); 
+    }
+}
+
+.about-para{
+    width: 700px;
+    
+}
+
+
+
+
+/*services*/
+.backbone {
+            background-color: lightblue;
+            padding: 20px;
+        }
+
+        .banner-title {
+            color: black;
+            font-size: 2em;
+            text-align: center;
+        }
+
+        .gradient-text {
+             color: maroon;
+        }
+
+        .container-careers {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 50px;
+            background-color: white;
+        }
+
+        .service-item {
+            margin-bottom: 20px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            height: 250px;
+            transform: translateX(100px);
+            opacity: 0;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+             
+        }
+
+        .service-item.from-left {
+            transform: translateX(-100px);
+        }
+
+        .service-item.from-right {
+            transform: translateX(100px);
+        }
+
+        .service-item.visible {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .container-careers-careers {
+            width: 100%;
+            height: 100%;
+            background-size: cover;  
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: transform 0.3s ease;
+        }
+        
+        .service-item:hover .container-careers-careers {
+            transform: scale(1.1);
+            background-color: navy;
+        }
+
+        .service-item h3 {
+            text-align: center;
+            margin-top: 10px;
+            font-weight: bold;
+            font-family: 'Times New Roman', Times, serif;
+            color: maroon;
+        }
+
+        /* Optional: Ensure the service-link has no default styling */
+        .service-link {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+
+.backbone {
+            background-color: lightgrey;
+            padding: 20px 0;
+        }
+.banner-title {
+            color: white;
+            text-align: center;
+        }
+.text-grade {
+                color: maroon;
+            
+             
+        }
+.about-abhishyandh {
+            background-color: whitesmoke;
+            padding: 40px 0;
+        }
+.flex-container123-abhishyandh-c {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;   
+        }
+.row {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-bottom: 20px;
+            gap: 30px;
+        }
+.main-flex-box123-abhishyandh-c {
+            width: calc(33.33% - 20px);
+            min-width: 300px;
+            max-width: 380px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.5s ease, transform 0.5s ease,transform 0.3s ease;
+            gap: 30px;
+            height: 270px;
+        }
+        
+         
+.main-flex-box123-abhishyandh-c.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+.main-flex-box123-abhishyandh-c:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+    background-color: navy; 
+	transform: rotate(360deg);
+	transition: 2s;
+}
+
+.main-flex-box123-abhishyandh-c:hover h2 {
+    color: white; /* Change heading color on hover */
+}
+        .main-flex-box123-abhishyandh-c img {
+            width: 95px;
+            height: 95px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        h2 {
+            font-family: 'Times New Roman', Times, serif;
+            color: maroon;
+            font-size: 1.2rem;
+        }
+        p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+
+
+ /*Why choose Abhishyandh*/
+        .body-why-shoose {
+            margin: 0;
+            padding: 0;
+            background-color: #192741;
+            font-family: sans-serif;
+            color: white;
+        }
+
+        .container-why-choose {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .services-row {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            max-width: 1200px;
+            margin-bottom: 20px;
+        }
+
+        .service {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: calc(50% - 20px);
+            margin: 0 10px;
+            padding: 20px;
+            background-color: #25324c;
+            border-radius: 10px;
+        }
+
+        .icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background-color: #f08c29;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .icon i {
+            font-size: 30px;
+            color: white;
+        }
+
+        .description {
+            text-align: center;
+        }
+
+        .description h2 {
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .description p {
+            margin-bottom: 0;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Responsive styles for smaller screens */
+        @media (max-width: 768px) {
+            .services-row {
+                flex-direction: column;
+            }
+
+            .service {
+                width: 100%;
+                margin: 0 0 20px 0;
+            }
+        }
+
+        /* Animation for smooth content reveal */
+        .service {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+
+        .service.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+ 
+
+/* Add media query for larger screens */
+@media screen and (min-width: 768px) {
+    .container-abhishyandh-con {
+        flex-direction: row; /* Side by side on desktop */
+    }
+
+    .left-side {
+        width: 60%;
+    }
+
+    .right-side {
+        width: 40%;
+        margin-top: 0;  
+    }
+}
+
+/* Adjust form inputs for better mobile experience */
+.form-row {
+    flex-direction: column;
+}
+
+.form-row > div {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+@media screen and (min-width: 768px) {
+    .form-row {
+        flex-direction: row;
+    }
+
+    .form-row > div {
+        width: 48%; /* Adjust width to allow for gap */
+    }
+}
+
+.container-abhishyandh, .container-careers, .container-why-choose, .container-Abhigrowth {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+    .container-abhishyandh, .container-careers, .container-why-choose, .container-Abhigrowth {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+
+
+ 
+/*projects*/
+.background-body-abhishyandh-p {
+       
+      background-size: cover;
+      color: white;
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container-flex-abhishyandh-p {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      align-items: flex-start;
+      width: 100%;
+    }
+
+    .container-wrapper-abhishyandh-p {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;  
+      width: 100%;  
+      max-width: 350px;  
+    }
+
+    .container-abhishyandh-p {
+        width: 100%; 
+    height: 250px;  
+    background-color: #333;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.3s ease;
+    }
+
+    .container-abhishyandh-p img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .container-abhishyandh-p:hover img {
+      transform: scale(1.1);  
+    }
+
+    .container-overlay-abhishyandh-p {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);  
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      color: white;  
+      font-size: 2em;  
+    }
+
+    .container-abhishyandh-p:hover .container-overlay-abhishyandh-p{
+      opacity: 1;  
+    }
+
+    .title-abhishyandh-p {
+      margin-top: 10px;
+      font-size: 1.2em;
+      font-weight: bold;
+      text-align: center;
+      color: maroon;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    .title-abhishyandh-p:hover {
+      color: orange;
+    }
+.fa-github:hover{
+    color: violet;
+}
+
+
+
+@media screen and (min-width: 768px) {
+    .container-wrapper-abhishyandh-p {
+        width: calc(33.333% - 20px);  
+    }
+
+    .container-abhishyandh-p {
+        height: 350px; /* Original height for desktop */
+    }
+}
+
+/*Grow your business with Abhishyndh*/
+.body-Abhigrowth{
+             background: linear-gradient(45deg,#152238,#23395d);
+            color: white;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container-Abhigrowth {
+            display: flex;
+            align-items: center;
+            background: linear-gradient(45deg,#152238,#23395d);
+            padding: 50px;
+            border-radius: 2px;
+            width: 80%;
+            max-width: 1200px;
+            justify-content: space-between;
+            gap: 20px;
+            
+        }
+
+        .content-Abhigrowth {
+            max-width: 600px;
+        }
+
+        .grow-h1 {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            font-family: 'Times New Roman', Times, serif;
+            
+        }
+
+        .h2-growth {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #59D186;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        
+
+        .button-growth {
+            background-color: #333;
+            color: white;
+            padding: 15px 30px;
+            border: 1px solid #45B572;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button-growth:hover {
+            background-color: #45B572;
+        }
+
+        .image-container {
+             
+            width: 500px;
+            height: 300px;
+        }
+
+        .image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+/*contact form*/
+.body-contact {
+    background-color: #f2f2f2;
+    font-family: sans-serif;
+    padding: 20px;
+}
+
+.container-contact {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.left, .right {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.left {
+    color: #007bff;
+}
+
+.left h2 {
+    font-size: 2em;  
+    margin: 0;
+    color: #007bff;
+}
+
+.left h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 1.5em;  
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.left p {
+    line-height: 1.5;
+    margin: 10px 0;
+}
+
+.left .email-section {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.left .email-section input {
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.left .email-section button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;  
+}
+
+.right {
+    background-color: white;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;  
+    padding: 20px;  
+    margin-top: 20px;  
+}
+
+.right h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.right input, .right select, .right textarea {
+    width: 100%;  
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.right textarea {
+    height: 100px;
+}
+
+.right button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;  
+}
+
+.right .footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.right .footer a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.btn-contact {
+    width: 100%;  
+}
+
+.email-section {
+    width: 200px  
+}
+
+/*map button section*/
+.map-button {
+        display: inline-block;
+        padding: 12px 24px;
+        background-color: #4285F4;  
+        color: white;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 8px;
+        transition: background-color 0.3s ease;
+        box-shadow: 0 2px 4px;
+        cursor: pointer;
+    }
+
+    .map-button:hover {
+        background-color: maroon;  
+    }
+
+    
+
+/* Media Queries */
+@media (min-width: 768px) {
+    .container-contact {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 50px;
+    }
+
+    .left {
+        width: 60%;
+        padding: 0;
+    }
+
+    .right {
+        width: 35%;
+        padding: 30px;
+    }
+}
+
+@media (max-width: 767px) {
+    .container-contact {
+        padding: 20px;  
+    }
+
+    .left h2 {
+        font-size: 2.5em;  
+    }
+
+    .left h3 {
+        font-size: 1.3em;  
+    }
+
+    .right {
+        padding: 20px;
+    }
+
+    .right h2 {
+        font-size: 1.8em; 
+    }
+
+    .left .email-section {
+        width: 100%;  
+    }
+
+    .btn-contact {
+        width: 100%;  
+    }
+}
+/*footer*/
+.body-footer {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    background: #1C1C1C;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+/*? footer containers */
+footer {
+    position: relative;
+    bottom: 0;
+    background: #161616;
+    width: 100%;
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+ 
+
+
+.footer-wrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 64rem;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+    
+    box-sizing: border-box;
+}
+
+.footer-columns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 4rem;
+    flex-wrap: wrap;
+    padding-top: 1rem;
+}
+
+.footer-logo-column {
+    padding-right: 10%;
+}
+
+.footer-logo {
+    margin-bottom: 1.5rem;
+    width: 14rem;
+}
+
+ 
+.social-wrapper {
+    display: flex;
+    gap: 0.5rem;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+}
+
+.social-links {
+    display: inline-flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.social-links a {
+    color: #7E7E7E;
+    text-decoration: none;
+}
+
+.social-links svg {
+    width: 2.5rem;
+    height: 2.5rem;
+    stroke: #7E7E7E;
+    transition: all 0.2s 
+        ease-in-out;
+}
+
+.social-links svg:hover {
+    stroke: #F9F9F9;
+}
+
+.social-links ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    list-style-type: none;
+}
+
+ 
+.link-columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    flex-grow: 1;
+}
+
+.link-columns>div {
+    flex-grow: 1;
+    display: flex;
+    gap: 2rem;
+}
+
+.link-columns>div>section {
+    min-width: 8rem;
+    width: 50%;
+}
+
+.link-columns ul {
+    display: flex;
+    gap: 1rem;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    flex-direction: column;
+    font-weight: 600;
+}
+
+.link-columns ul a {
+    color:  #7E7E7E;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.link-columns ul a:hover {
+    color: #F9F9F9;
+}
+
+.link-columns h3 {
+    color: #F9F9F9;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+ 
+.footer-bottom {
+    margin-top: 8rem;
+    width: 100%;
+    color:  #7E7E7E;
+}
+
+.footer-bottom-wrapper {
+    max-width:  64rem;
+    margin: 0 auto;
+    width: 100%;
+    padding: 2.5rem 1rem;
+    border-top: 1px solid 
+         #3E3E3E;
+}
+
+.footer-bottom small {
+    font-size: 1rem;
+    display: inline;
+    white-space: nowrap;
+}
+
+.footer-bottom>small {
+    font-size: 1rem;
+    width: 100%
+}
+
+@media screen and (min-width: 600px) {
+    .link-columns>div>section {
+        min-width: auto;
+    }
+}
+.h1-follow h1{
+    color: white; 
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+.Heading-Abhishyandh{
+    width: 100%;
+    height: 100px;
+    background-color: #3ECF8E;
+}
+.Heading-Abhishyandh h2{
+    color: white;
+    text-align: center;
+    font-size: 35px;
+    margin-top: 20px;
+}
+
+/*whatsapp*/
+.whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            cursor: pointer;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            background-color: green;
+            border-radius:50px;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .whatsapp-icon {
+            width: 60px;
+            height: 25px;
+            margin-right: 10px;
+        }
+
+        .whatsapp-popup {
+            display: none;
+            position: absolute;
+            bottom: 150px;
+            right: 20px;
+            background: white;
+            border: 1px solid #25D366;
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            width:250px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            z-index: 1001;
+        }
+
+        .whatsapp-popup p {
+            margin: 0;
+            color: #25D366;
+        }
+
+        .whatsapp-popup textarea {
+            width: 100%;
+            height: 60px;
+            margin-top: 10px;
+            border-radius: 8px;
+            border: 1px solid #25D366;
+            padding: 5px;
+            font-family: Arial, sans-serif;
+            resize: none;
+        }
+
+        .whatsapp-popup button {
+            border: 1px solid green;
+            border-radius: 10px;
+            height: 40px;
+            width: 100%;
+            background-color: green;
+            color: white;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 1rem;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        .whatsapp-popup button:hover {
+            background-color: lightgray;
+            color: black;
+        }
+
+/*Home caraseol*/
+:root{
+    --item1-transform: translateX(-100%) translateY(-5%) scale(1.5);
+    --item1-filter: blur(30px);
+    --item1-zIndex: 11;
+    --item1-opacity: 0;
+
+    --item2-transform: translateX(0);
+    --item2-filter: blur(0px);
+    --item2-zIndex: 10;
+    --item2-opacity: 1;
+
+    --item3-transform: translate(50%,10%) scale(0.8);
+    --item3-filter: blur(10px);
+    --item3-zIndex: 9;
+    --item3-opacity: 1;
+
+    --item4-transform: translate(90%,20%) scale(0.5);
+    --item4-filter: blur(30px);
+    --item4-zIndex: 8;
+    --item4-opacity: 1;
+    
+    --item5-transform: translate(120%,30%) scale(0.3);
+    --item5-filter: blur(40px);
+    --item5-zIndex: 7;
+    --item5-opacity: 0;
+}
+
+
+.body-Home{
+    margin: 0;
+    background-color: #F4F4F4;
+    font-family: Poppins;
+}
+header{
+    width: 1140px;
+    max-width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    height: 50px;
+    align-items: center;
+}
+header .logo{
+    font-weight: bold;
+}
+header nav a{
+    margin-left: 30px;
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+}
+
+/* carousel */
+.carousel{
+    position: relative;
+    height: 750px;
+    overflow: hidden;
+    margin-top: -50px;
+    width: 100vw;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+.carousel .list{
+    position: absolute;
+    width: 1140px;
+    max-width: 90%;
+    height: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.carousel .list .item{
+    position: absolute;
+    left: 0%;
+    width: 70%;
+    height: 100%;
+    font-size: 15px;
+    transition: left 0.5s, opacity 0.5s, width 0.5s;
+}
+.carousel .list .item:nth-child(n + 6){
+    opacity: 0;
+}
+.carousel .list .item:nth-child(2){
+    z-index: 10;
+    transform: translateX(0);
+}
+.carousel .list .item img{
+    width: 50%;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: right 1.5s;
+}
+
+.carousel .list .item .introduce{
+    opacity: 0;
+    pointer-events: none;
+}
+.carousel .list .item:nth-child(2) .introduce{
+    opacity: 1;
+    pointer-events: auto;
+    width: 400px;
+    position: absolute;
+    top: 50%;
+    transform:  translateY(-50%);
+    transition: opacity 0.5s;
+}
+.carousel .list .item .introduce .title{
+    font-size: 2em;
+    font-weight: 500;
+    line-height: 1em;
+}
+.carousel .list .item .introduce .topic{
+    font-size: 4em;
+    font-weight: 500;
+}
+.carousel .list .item .introduce .des{
+    font-size: small;
+    color: #5559;
+}
+.carousel .list .item .introduce .seeMore{
+    font-family: Poppins;
+    margin-top: 1.2em;
+    padding: 5px 0;
+    border: none;
+    border-bottom: 1px solid #555;
+    background-color: transparent;
+    font-weight: bold;
+    letter-spacing: 3px;
+    transition: background 0.5s;
+}
+.carousel .list .item .introduce .seeMore:hover{
+    background: #eee;
+}
+.carousel .list .item:nth-child(1){
+    transform: var(--item1-transform);
+    filter: var(--item1-filter);
+    z-index: var(--item1-zIndex);
+    opacity: var(--item1-opacity);
+    pointer-events: none;
+}
+.carousel .list .item:nth-child(3){
+    transform: var(--item3-transform);
+    filter: var(--item3-filter);
+    z-index: var(--item3-zIndex);
+}
+.carousel .list .item:nth-child(4){
+    transform: var(--item4-transform);
+    filter: var(--item4-filter);
+    z-index: var(--item4-zIndex);
+}
+.carousel .list .item:nth-child(5){
+    transform: var(--item5-transform);
+    filter: var(--item5-filter);
+    opacity: var(--item5-opacity);
+    pointer-events: none;
+}
+/* animation text in item2 */
+.carousel .list .item:nth-child(2) .introduce .title,
+.carousel .list .item:nth-child(2) .introduce .topic,
+.carousel .list .item:nth-child(2) .introduce .des,
+.carousel .list .item:nth-child(2) .introduce .seeMore{
+    opacity: 0;
+    animation: showContent 0.5s 1s ease-in-out 1 forwards;
+}
+@keyframes showContent{
+    from{
+        transform: translateY(-30px);
+        filter: blur(10px);
+    }to{
+        transform: translateY(0);
+        opacity: 1;
+        filter: blur(0px);
+    }
+}
+.carousel .list .item:nth-child(2) .introduce .topic{
+    animation-delay: 1.2s;
+}
+.carousel .list .item:nth-child(2) .introduce .des{
+    animation-delay: 1.4s;
+}
+.carousel .list .item:nth-child(2) .introduce .seeMore{
+    animation-delay: 1.6s;
+}
+/* next click */
+.carousel.next .item:nth-child(1){
+    animation: transformFromPosition2 0.5s ease-in-out 1 forwards;
+}
+@keyframes transformFromPosition2{
+    from{
+        transform: var(--item2-transform);
+        filter: var(--item2-filter);
+        opacity: var(--item2-opacity);
+    }
+}
+.carousel.next .item:nth-child(2){
+    animation: transformFromPosition3 0.7s ease-in-out 1 forwards;
+}
+@keyframes transformFromPosition3{
+    from{
+        transform: var(--item3-transform);
+        filter: var(--item3-filter);
+        opacity: var(--item3-opacity);
+    }
+}
+.carousel.next .item:nth-child(3){
+    animation: transformFromPosition4 0.9s ease-in-out 1 forwards;
+}
+@keyframes transformFromPosition4{
+    from{
+        transform: var(--item4-transform);
+        filter: var(--item4-filter);
+        opacity: var(--item4-opacity);
+    }
+}
+.carousel.next .item:nth-child(4){
+    animation: transformFromPosition5 1.1s ease-in-out 1 forwards;
+}
+@keyframes transformFromPosition5{
+    from{
+        transform: var(--item5-transform);
+        filter: var(--item5-filter);
+        opacity: var(--item5-opacity);
+    }
+}
+/* previous */
+.carousel.prev .list .item:nth-child(5){
+    animation: transformFromPosition4 0.5s ease-in-out 1 forwards;
+}
+.carousel.prev .list .item:nth-child(4){
+    animation: transformFromPosition3 0.7s ease-in-out 1 forwards;
+}
+.carousel.prev .list .item:nth-child(3){
+    animation: transformFromPosition2 0.9s ease-in-out 1 forwards;
+}
+.carousel.prev .list .item:nth-child(2){
+    animation: transformFromPosition1 1.1s ease-in-out 1 forwards;
+}
+@keyframes transformFromPosition1{
+    from{
+        transform: var(--item1-transform);
+        filter: var(--item1-filter);
+        opacity: var(--item1-opacity);        
+    }
+}
+
+/* detail  */
+.carousel .list .item .detail{
+    opacity: 0;
+    pointer-events: none;
+}
+/* showDetail */
+.carousel.showDetail .list .item:nth-child(3),
+.carousel.showDetail .list .item:nth-child(4){
+    left: 100%;
+    opacity: 0;
+    pointer-events: none;
+}
+.carousel.showDetail .list .item:nth-child(2){
+    width: 100%;
+}
+.carousel.showDetail .list .item:nth-child(2) .introduce{
+    opacity: 0;
+    pointer-events: none;
+}
+.carousel.showDetail .list .item:nth-child(2) img{
+    right: 50%;
+}
+.carousel.showDetail .list .item:nth-child(2) .detail{
+    opacity: 1;
+    width: 50%;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: right;
+    pointer-events: auto;
+}
+.carousel.showDetail .list .item:nth-child(2) .detail .title{
+    font-size: 4em;
+}
+.carousel.showDetail .list .item:nth-child(2) .detail .specifications{
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    border-top: 1px solid #5553;
+    margin-top: 20px;
+}
+.carousel.showDetail .list .item:nth-child(2) .detail .specifications div{
+    width: 90px;
+    text-align: center;
+    flex-shrink: 0;
+}
+.carousel.showDetail .list .item:nth-child(2) .detail .specifications div p:nth-child(1){
+    font-weight: bold;
+}
+.carousel.carousel.showDetail .list .item:nth-child(2) .checkout button{
+    font-family: Poppins;
+    background-color: transparent;
+    border: 1px solid #5555;
+    margin-left: 5px;
+    padding: 5px 10px;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+.carousel.carousel.showDetail .list .item:nth-child(2) .checkout button:nth-child(2){
+    background-color: #693EFF;
+    color: #eee;
+}
+.carousel.showDetail .list .item:nth-child(2) .detail  .title,
+.carousel.showDetail .list .item:nth-child(2) .detail  .des,
+.carousel.showDetail .list .item:nth-child(2) .detail .specifications,
+.carousel.showDetail .list .item:nth-child(2) .detail .checkout{
+    opacity: 0;
+    animation: showContent 0.5s 1s ease-in-out 1 forwards;
+}
+.carousel.showDetail .list .item:nth-child(2) .detail  .des{
+    animation-delay: 1.2s;
+}
+.carousel.showDetail .list .item:nth-child(2) .detail .specifications{
+    animation-delay: 1.4s;
+}
+.carousel.showDetail .list .item:nth-child(2) .detail .checkout{
+    animation-delay: 1.6s;
+}
+.arrows{
+    position: absolute;
+    bottom: 10px;
+    width: 1140px;
+    max-width: 90%;
+    display: flex;
+    justify-content: space-between;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#prev,
+#next{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-family: monospace;
+    border: 1px solid #5555;
+    font-size: large;
+    bottom: 20%;
+    left: 10%;
+}
+#next{
+    left: unset;
+    right: 10%;
+}
+#back{
+    position: absolute;
+    z-index: 100;
+    bottom: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: none;
+    border-bottom: 1px solid #555;
+    font-family: Poppins;
+    font-weight: bold;
+    letter-spacing: 3px;
+    background-color: transparent;
+    padding: 10px;
+    /* opacity: 0; */
+    transition: opacity 0.5s;
+}
+.carousel.showDetail #back{
+    opacity: 1;
+}
+.carousel.showDetail #prev,
+.carousel.showDetail #next{
+    opacity: 0;
+    pointer-events: none;
+}
+.carousel::before{
+    width: 500px;
+    height: 300px;
+    content: '';
+    background-image: linear-gradient(70deg, #DC422A, blue);
+    position: absolute;
+    z-index: -1;
+    border-radius: 20% 30% 80% 10%;
+    filter: blur(150px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-10%, -50%);
+    transition: 1s;
+}
+.carousel.showDetail::before{
+    transform: translate(-100%, -50%) rotate(90deg);
+    filter: blur(130px);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 1200px) {
+    .carousel .list,
+    .arrows {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 991px){
+    /* ipad, tablets */
+    .carousel .list .item{
+        width: 90%;
+    }
+    .carousel.showDetail .list .item:nth-child(2) .detail .specifications{
+        overflow: auto;
+    }
+    .carousel.showDetail .list .item:nth-child(2) .detail .title{
+        font-size: 2em;
+    }
+    .carousel .list .item .introduce .topic {
+        font-size: 3em;
+    }
+}
+
+@media screen and (max-width: 767px){
+    /* mobile */
+    .carousel{
+        height: 600px;
+    }
+    .carousel .list .item{
+        width: 100%;
+        font-size: 10px;
+    }
+    
+    .carousel .list{
+        height: 100%;
+    }
+    .carousel .list .item:nth-child(2) .introduce{
+        width: 50%;
+    }
+    
+    .carousel .list .item img{
+        width: 40%;
+    }
+    .carousel.showDetail .list .item:nth-child(2) .detail{
+        backdrop-filter: blur(10px);
+        font-size: small;
+    }
+    .carousel .list .item:nth-child(2) .introduce .des,
+    .carousel.showDetail .list .item:nth-child(2) .detail .des{
+        height: 100px;
+        overflow: auto;
+    }
+    .carousel.showDetail .list .item:nth-child(2) .detail .checkout{
+        display: flex;
+        width: max-content;
+        float: right;
+    }
+    header {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 0;
+    }
+    header nav {
+        margin-top: 10px;
+    }
+    header nav a {
+        margin-left: 15px;
+        font-size: 14px;
+    }
+    .carousel .list .item .introduce .title {
+        font-size: 1.5em;
+    }
+    .carousel .list .item .introduce .topic {
+        font-size: 2.5em;
+    }
+    .carousel.showDetail .list .item:nth-child(2) img {
+        right: 0;
+        width: 100%;
+        opacity: 0.3;
+    }
+    .carousel.showDetail .list .item:nth-child(2) .detail {
+        width: 100%;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .carousel {
+        height: 500px;
+    }
+    .carousel .list .item .introduce .topic {
+        font-size: 2em;
+    }
+    .carousel .list .item:nth-child(2) .introduce {
+        width: 70%;
+    }
+    .carousel.showDetail .list .item:nth-child(2) .detail .title {
+        font-size: 1.5em;
+    }
+    #prev, #next {
+        width: 30px;
+        height: 30px;
+        font-size: medium;
+    }
+}
+
+
+	</style>
+</head>
+<body>
+	<div class="background-abhishyandh-N">
+    <nav class="menu__wrapper-abhishyandh-N">
+        <div class="menu__bar-abhishyandh-N">
+            <a
+                href="#"
+                title="Logo-abhishyandh-N"
+                class="logo-abhishyandh-N">
+                <img th:src="@{/images/A-images/logo.jpg}" style="width: 100px; height: 60px;">
+            </a>
+            <ul class="navigation-abhishyandh-N hide-abhishyandh-N">
+                  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                 
+                  <a th:href="@{/Website}" style="font-size: 1.1rem; font-family: 'Times New Roman', Times, serif; font-weight: bold;color: #173F5F; text-decoration: none;">Home</a>
+                 
+                  <a th:href="@{/AboutAbhishyandh}" style="font-size: 1.1rem;font-family: 'Times New Roman', Times, serif; font-weight: bold;color: #173F5F;text-decoration: none;">About</a>
+                 
+                  <li>
+                    <button>
+                        <a th:href="@{/ITSERVICES}" style="font-family: 'Times New Roman', Times, serif; font-size: 1.1rem;font-weight: bold;color: #173F5F;text-decoration: none;">Services</a>
+                        <svg opacity="0.5" aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-chevron-down HeaderMenu-icon ml-1">
+                            <path d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z"></path>
+                        </svg>
+                    </button>
+                    <div class="dropdown-abhishyandh-N">
+                        <ul class="list-items-with-description-abhishyandh-N" style="color: white;">
+                            <li>
+                                <svg aria-hidden="true" height="24" viewBox="0 0 24 24" version="1.1" width="24" data-view-component="true" class="octicon octicon-workflow color-fg-subtle mr-3">
+                                    <path d="M1 3a2 2 0 0 1 2-2h6.5a2 2 0 0 1 2 2v6.5a2 2 0 0 1-2 2H7v4.063C7 16.355 7.644 17 8.438 17H12.5v-2.5a2 2 0 0 1 2-2H21a2 2 0 0 1 2 2V21a2 2 0 0 1-2 2h-6.5a2 2 0 0 1-2-2v-2.5H8.437A2.939 2.939 0 0 1 5.5 15.562V11.5H3a2 2 0 0 1-2-2Zm2-.5a.5.5 0 0 0-.5.5v6.5a.5.5 0 0 0 .5.5h6.5a.5.5 0 0 0 .5-.5V3a.5.5 0 0 0-.5-.5ZM14.5 14a.5.5 0 0 0-.5.5V21a.5.5 0 0 0 .5.5H21a.5.5 0 0 0 .5-.5v-6.5a.5.5 0 0 0-.5-.5Z"></path>
+                                </svg>
+                                <a th:href="@{/ITSERVICES}">
+                                    <div class="item-title-abhishyandh-N">
+                                        <h3 style="color: black;">IT SERVICES</h3>
+                                        <p style="color: blue;text-decoration: none;">We Design and Develop your Dream Website</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-laptop" viewBox="0 0 16 16">
+                                    <path d="M13.5 3a.5.5 0 0 1 .5.5V11H2V3.5a.5.5 0 0 1 .5-.5zm-11-1A1.5 1.5 0 0 0 1 3.5V12h14V3.5A1.5 1.5 0 0 0 13.5 2zM0 12.5h16a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5"/>
+                                  </svg>
+                                <a th:href="@{/ITTRAININGS}">
+                                    <div class="item-title-abhishyandh-N">
+                                        <h3 style="color: black;">IT TRAININGS</h3>
+                                        <p style="color: blue; text-decoration: none;">We Train you and shape your IT Future</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <svg aria-hidden="true" height="24" viewBox="0 0 24 24" version="1.1" width="24" data-view-component="true" class="octicon octicon-package color-fg-subtle mr-3">
+                                    <path d="M12.876.64V.639l8.25 4.763c.541.313.875.89.875 1.515v9.525a1.75 1.75 0 0 1-.875 1.516l-8.25 4.762a1.748 1.748 0 0 1-1.75 0l-8.25-4.763a1.75 1.75 0 0 1-.875-1.515V6.917c0-.625.334-1.202.875-1.515L11.126.64a1.748 1.748 0 0 1 1.75 0Zm-1 1.298L4.251 6.34l7.75 4.474 7.75-4.474-7.625-4.402a.248.248 0 0 0-.25 0Zm.875 19.123 7.625-4.402a.25.25 0 0 0 .125-.216V7.639l-7.75 4.474ZM3.501 7.64v8.803c0 .09.048.172.125.216l7.625 4.402v-8.947Z"></path>
+                                </svg>
+                                 <a th:href="@{/HRSERVICES}">
+                                    <div class="item-title-abhishyandh-N" style="color: black;">
+                                    <h3 style="color: black;">HR SERVICES</h3>
+                                       <p style="color: blue;text-decoration: none;">Empowering Your Business with Exceptional HR Solutions</p>
+                                       
+                                   </div>
+                                 </a>
+                            </li>
+                            <li>
+                                <svg aria-hidden="true" height="24" viewBox="0 0 24 24" version="1.1" width="24" data-view-component="true" class="octicon octicon-shield-check color-fg-subtle mr-3">
+                                    <path d="M16.53 9.78a.75.75 0 0 0-1.06-1.06L11 13.19l-1.97-1.97a.75.75 0 0 0-1.06 1.06l2.5 2.5a.75.75 0 0 0 1.06 0l5-5Z"></path><path d="m12.54.637 8.25 2.675A1.75 1.75 0 0 1 22 4.976V10c0 6.19-3.771 10.704-9.401 12.83a1.704 1.704 0 0 1-1.198 0C5.77 20.705 2 16.19 2 10V4.976c0-.758.489-1.43 1.21-1.664L11.46.637a1.748 1.748 0 0 1 1.08 0Zm-.617 1.426-8.25 2.676a.249.249 0 0 0-.173.237V10c0 5.46 3.28 9.483 8.43 11.426a.199.199 0 0 0 .14 0C17.22 19.483 20.5 15.461 20.5 10V4.976a.25.25 0 0 0-.173-.237l-8.25-2.676a.253.253 0 0 0-.154 0Z"></path>
+                                </svg>
+                                <a th:href="@{/BPOSERVICES}">
+                                    <div class="item-title-abhishyandh-N" style="color: black;">
+                                        <h3 style="color: black;">BPO SERVICES</h3>
+                                        <p style="color: blue; text-decoration: none">BPO: Empowering businesses to excel by focusing on what we can do best.</p>
+                                    </div>
+                                 </a>
+                            </li>
+                             
+                        </ul>
+                    </div>
+                </li>
+                 <li>
+    <a th:href="@{/ITSERVICES}" style="font-family: 'Times New Roman', Times, serif; font-size: 1.1rem; font-weight: bold; color: #173F5F; text-decoration: none;">
+        Capabilities
+    </a>
+    <svg opacity="0.5" aria-hidden="true" height="16" viewBox="0 0 16 16" width="16" class="octicon octicon-chevron-down HeaderMenu-icon ml-1">
+        <path d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z"></path>
+    </svg>
+    <div class="dropdown-abhishyandh-N">
+        <h3 style="color: maroon;">Our Services</h3>
+        <ul class="list-menu-items-abhishyandh-N">
+            <li><a th:href="@{/ITSERVICES}">Web Development</a></li>
+            <li><a th:href="@{/ITSERVICES}">Java Development</a></li>
+            <li><a th:href="@{/ITSERVICES}">Python Development</a></li>
+            <li><a th:href="@{/ITSERVICES}">Support Projects</a></li>
+        </ul>
+    </div>
+</li>
+<li>
+    <a th:href="@{/ITTRAININGS}" style="font-family: 'Times New Roman', Times, serif; font-size: 1.1rem; font-weight: bold; color: #173F5F; text-decoration: none;">
+        Trainings
+    </a>
+    <svg opacity="0.5" aria-hidden="true" height="16" viewBox="0 0 16 16" width="16" class="octicon octicon-chevron-down HeaderMenu-icon ml-1">
+        <path d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z"></path>
+    </svg>
+    <div class="dropdown-abhishyandh-N">
+        <h3 style="color: maroon;">IT TRAININGS</h3>
+        <ul class="list-menu-items-abhishyandh-N">
+            <li><a th:href="@{/FullStackJavaCourse}" class="courses">Full Stack Java Development</a></li>
+            <li><a th:href="@{/PythonFullStack}" class="courses">Python Full Stack Development</a></li>
+            <li><a th:href="@{/DotNetCourse}" class="courses">Dot Net Full Stack Development</a></li>
+            <li><a th:href="@{/PowerBi}" class="courses">Power BI</a></li>
+            <li><a th:href="@{/ArtificialIntelligenceMl}" class="courses">AI/ML</a></li>
+        </ul>
+        <h3 style="color: maroon;">MANAGEMENT</h3>
+        <ul class="list-menu-items-abhishyandh-N">
+            <li><a th:href="@{/recruitment}" class="courses">Recruitment</a></li>
+            <li><a th:href="@{/resumebuilding}" class="courses">Resume Building</a></li>
+            <li><a th:href="@{/interviewskillsdevelopment}" class="courses">Interview Preparation</a></li>
+            <li><a th:href="@{/businessdevelop}" class="courses">Business Development</a></li>
+            <li><a th:href="@{/Hroperations}" class="courses">HR Operations</a></li>
+        </ul>
+    </div>
+</li>
+<li>
+    <a th:href="@{/Careers}" style="font-family: 'Times New Roman', Times, serif; font-size: 1.1rem; font-weight: bold; color: #173F5F;">Careers</a>
+</li>
+<li>
+    <a th:href="@{/#contact-form-page}" class="contact-link" style="font-family: 'Times New Roman', Times, serif; font-size: 1.1rem; font-weight: bold; color: #173F5F;">Contact Us</a>
+</li>
+<li>
+    <a th:href="@{/register}"><button class="btn-navbar">Get Started</button></a>
+</li>
+
+        </ul>
+        <button class="burger-menu-abhishyandh-N">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M4 6l16 0"></path>
+                <path d="M4 12l16 0"></path>
+                <path d="M4 18l16 0"></path>
+            </svg>
+        </button>
+    </nav>
+</div>
+ 
+ <!---Home Picture-->
+ <br>
+ <br>
+ <br>
+  <div class="body-Home">
+    <header>
+        <div class="logo">Abhishyandh Global Solutions Pvt Ltd</div>
+    </header>
+    <div class="carousel">
+        <div class="list">
+            <!-- Item 1 -->
+            <div class="item">
+                <img th:src="@{/images/A-images/BackgroundImageforITServices1.jpeg}" alt="Website Development" style="border-radius: 8px; box-shadow: 0 0 10px;">
+                <div class="introduce">
+                    <div class="title">Website Development</div>
+                    <div class="topic">We build and develop your dream website</div>
+                    <div class="des">
+                        Abhishyandh Global Solutions Pvt Ltd
+                    </div>
+                    <button class="seeMore">SEE MORE &#8599;</button>
+                </div>
+                <div class="detail">
+                    <div class="title">Abhishyandh</div>
+                    <div class="des">Locus Of Perfection</div>
+                    <div class="specifications">
+                        <div>
+                            <p>Responsive Design</p>
+                             
+                        </div>
+                        <div>
+                            <p>Customization</p>
+                             
+                        </div>
+                        <div>
+                            <p>User-Friendly Interface</p>
+                             
+                        </div>
+                        <div>
+                            <p>Fast Loading Speed</p>
+                             
+                        </div>
+                        <div>
+                            <p>Security</p>
+                             
+                        </div>
+                        <div>
+                            <p>Integration Capabilities</p>
+                            
+                        </div>
+                    </div>
+                    <div class="checkout">
+                        <button>Contact Abhishayndh</button>
+                        <button>Take a look at our IT Services</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="item">
+                <img th:src="@{/images/A-images/Websitedevelopmentkhajaabhishayndh.jpg}" alt="Website1" style="border-radius: 8px; box-shadow: 0 0 10px;">
+                <div class="introduce">
+                    <div class="title">Website Development Service</div>
+                    <div class="topic">A Website speak Louder than Words</div>
+                    <div class="des">
+                         Discover how advanced images and video technology can seamlessly integrate into your projects,enhancing your website with high performance and management.
+                    </div>
+                    <button class="seeMore">SEE MORE &#8599;</button>
+                </div>
+                <div class="detail">
+                    <div class="title">Website Development Projects</div>
+                    <div class="des">We Design, Build and Develop Web Based Projects</div>
+                    <div class="specifications">
+                        <div>
+                            <p>Responsive Design</p>
+                             
+                        </div>
+                        <div>
+                            <p>Customization</p>
+                             
+                        </div>
+                        <div>
+                            <p>User-Friendly Interface</p>
+                             
+                        </div>
+                        <div>
+                            <p>Fast Loading Speed</p>
+                             
+                        </div>
+                        <div>
+                            <p>Security</p>
+                             
+                        </div>
+                        <div>
+                            <p>Integration Capabilities</p>
+                            
+                        </div>
+                    </div>
+                    <div class="checkout">
+                        <button>Contact Abhishayndh</button>
+                        <button>Take a look at our IT Services</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="item">
+                <img th:src="@{/images/A-images/webapplicationimagekhaja.jpg}" alt="Website2" style="border-radius: 8px; box-shadow: 0 0 10px;">
+                <div class="introduce">
+                    <div class="title">Web Application Services</div>
+                    <div class="topic">We build and develop your dream web Application</div>
+                    <div class="des">We specialize in creating tailored,
+                         responsive web applications that not only meet your unique business needs but also captivate and engage your audience
+                    </div>
+                    <button class="seeMore">SEE MORE &#8599;</button>
+                </div>
+                <div class="detail">
+                    <div class="title">Web Application Projects</div>
+                    <div class="des">We Design, Build and Develop Web Applications</div>
+                    <div class="specifications">
+                        <div>
+                            <p>Responsive Design</p>
+                             
+                        </div>
+                        <div>
+                            <p>Customization</p>
+                             
+                        </div>
+                        <div>
+                            <p>User-Friendly Interface</p>
+                             
+                        </div>
+                        <div>
+                            <p>Fast Loading Speed</p>
+                             
+                        </div>
+                        <div>
+                            <p>Security</p>
+                             
+                        </div>
+                        <div>
+                            <p>Integration Capabilities</p>
+                            
+                        </div>
+                    </div>
+                    <div class="checkout">
+                        <button>Contact Abhishayndh</button>
+                        <button>Take a look at our IT Services</button>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="item">
+                <img th:src="@{/images/A-images/supportprojectskhaja.jpg}" alt="Website3" style="border-radius: 8px; box-shadow: 0 0 10px;">
+                <div class="introduce">
+                    <div class="title">Support Projects</div>
+                    <div class="topic">AbhiShayndh: Your Trusted Partner for Minor Projects and Major Support</div>
+                    <div class="des">
+                       At AbhiShayndh, we are dedicated to delivering exceptional support for large-scale projects 
+                        execution and unparalleled service. Whether you're embarking on a complex venture 
+                       or need expert guidance to scale your operations.
+                    </div>
+                    <button class="seeMore">SEE MORE &#8599;</button>
+                </div>
+                <div class="detail">
+                    <div class="title">Support Projects</div>
+                    <div class="des">We accepts your large scale projects in  Our support Projects services</div>
+                   <div class="specifications">
+                        <div>
+                            <p>Responsive Design</p>
+                             
+                        </div>
+                        <div>
+                            <p>Customization</p>
+                             
+                        </div>
+                        <div>
+                            <p>User-Friendly Interface</p>
+                             
+                        </div>
+                        <div>
+                            <p>Fast Loading Speed</p>
+                             
+                        </div>
+                        <div>
+                            <p>Security</p>
+                             
+                        </div>
+                        <div>
+                            <p>Integration Capabilities</p>
+                            
+                        </div>
+                    </div>
+                    <div class="checkout">
+                        <button>Contact Abhishayndh</button>
+                        <button>Take a look at our IT Services</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="item">
+                <img th:src="@{/images/A-images/springbootreactkhaja.jpg}" alt="Website4" style="border-radius: 8px; box-shadow: 0 0 10px;">
+                <div class="introduce">
+                    <div class="title">SpringBoot and Recatjs Projects </div>
+                    <div class="topic">AbhiShayndh: Mastering Your Vision with Expert Spring Boot and React.js Solutions</div>
+                    <div class="des">
+                        At AbhiShayndh, we turn your ambitious tech visions into reality with our specialized expertise in Spring Boot and React.js. Whether you're launching a new project or scaling an existing one, 
+                        our team delivers top-tier solutions that combine the power of robust back-end frameworks with dynamic, user-friendly front-end interfaces.
+                    </div>
+                    <button class="seeMore">SEE MORE &#8599;</button>
+                </div>
+                <div class="detail">
+                    <div class="title">SpringBoot and React Projects</div>
+                    <div class="des">We Design, Build and Develop SpringBoot and React Integration projects</div>
+                    <div class="specifications">
+                        <div>
+                            <p>Responsive Design</p>
+                             
+                        </div>
+                        <div>
+                            <p>Customization</p>
+                             
+                        </div>
+                        <div>
+                            <p>User-Friendly Interface</p>
+                             
+                        </div>
+                        <div>
+                            <p>Fast Loading Speed</p>
+                             
+                        </div>
+                        <div>
+                            <p>Security</p>
+                             
+                        </div>
+                        <div>
+                            <p>Integration Capabilities</p>
+                            
+                        </div>
+                    </div>
+                    <div class="checkout">
+                        <button>Contact Abhishayndh</button>
+                        <button>Take a look at our IT Services</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="item">
+                <img th:src="@{/images/A-images/hrserviceskhaja.jpg}" alt="Website5" style="border-radius: 8px; box-shadow: 0 0 10px;">
+                <div class="introduce">
+                    <div class="title">HR Services</div>
+                    <div class="topic">AbhiShayndh: Revolutionizing HR Solutions for India's Leading Enterprises</div>
+                    <div class="des">
+                       Unlock the full potential of your workforce with AbhiShayndh’s premier HR services, tailored specifically for large companies.
+                        We excel in streamlining HR operations to significantly reduce production costs and enhance efficiency. 
+                    </div>
+                    <button class="seeMore">SEE MORE &#8599;</button>
+                </div>
+                <div class="detail">
+                    <div class="title">Abhishyandh HR SERVICES </div>
+                    <div class="des"> Transform your HR approach and experience unparalleled growth with our trusted services.</div>
+                    <div class="specifications">
+                        <div>
+                            <p>Recruitment Services</p>
+                             
+                        </div>
+                        <div>
+                            <p>Payroll Services</p>
+                             
+                        </div>
+                        <div>
+                            <p>Third Party Payroll Services</p>
+                             
+                        </div>
+                        <div>
+                            <p>Background Verification Services</p>
+                             
+                        </div>
+                        <div>
+                            <p>Internship Program</p>
+                             
+                        </div>
+                        <div>
+                            <p>Trainings</p>
+                             
+                        </div>
+                        <div>
+                            <p>Employee Enganement Services</p>
+                            
+                        </div>
+                    </div>
+                    <div class="checkout">
+                        <button>Contact Abhishayndh</button>
+                        <button>Take a look at our IT Services</button>
+                    </div>
+                </div>
+            </div>
+
+             
+
+        </div>
+        <div class="arrows">
+            <button id="prev" class="btn-move" style="background-color: orange;">&lt;</button>
+            <button id="next" class="btn-move" style="background-color: orange;">&gt;</button>
+            <button id="back">See Our All Capabilities &#8599;</button>
+        </div>
+    </div>
+</div>
+
+ <!--Home completed-->
+ <!--About-->
+<section class="About" style="background-color: white;">
+    <div class="container-abhishyandh">
+        <br>
+        <br>
+        <br>
+        <br> 
+    <center>
+		 <h2 class="banner-title">
+        <span style="color: black;">About</span> <span class="gradient-text" style="color: maroon;">Abhishyandh</span>
+    </h2>
+	</center>
+ 
+        <div class="about-content-abhishyandh">
+            <div class="about-text-abhishyandh">
+                <h4 style="font-family: 'Times New Roman', Times, serif; font-weight: bold; color: maroon;">Abhishyandh: Transforming Ideas into Powerful Code</h4>
+                <p class="about-para" style="color: black; font-family: 'Times New Roman', Times, serif; font-size: 1rem;">
+                    Welcome to Abhishyandh! Abhishyandh Global Solutions stands at the forefront of innovation, providing outstanding IT Services,
+                    HR Services, and BPO services. Our commitment to excellence propels businesses toward success, leveraging creativity and operational efficiency.
+                    With a relentless focus on client satisfaction and transformative IT solutions, they aspire to be a premier global partner.
+                    At Abhishyandh, we transform your IT challenges into strategic opportunities, delivering solutions that drive innovation, efficiency, and growth.
+                    Partner with us to elevate your technology and achieve exceptional results. We are a passionate team dedicated to delivering high-quality solutions to our clients.
+                    With years of experience in the industry, we strive to innovate and exceed expectations in everything we do.
+                </p>
+                <p style="color: black; font-family: 'Times New Roman', Times, serif;">
+                    We Turn your Ideas into Code and Design. Elevate Your IT Experience with Abhishyandh
+                </p>
+                <br>
+                <button class="btn-about" th:onclick="@{/contact}">Contact Abhishayndh</button>
+            </div>
+            <div class="about-image-abhishyandh">
+                <img th:src="@{/images/A-images/AbhishyandhITServiceHome.jpg}" alt="abhishyandh"/>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+    <section>
+        <div class="backbone">
+            <center>
+                <h2 class="banner-title">
+                    <span>Our</span> <span class="gradient-text">Services</span>
+                </h2>
+            </center>
+        </div>
+
+        <section>
+            <div class="container-careers">
+                <a th:href="@{/IT SERVICES.html}" class="service-link">
+                    <div>
+                        <div class="service-item from-left">
+                            <div class="container-careers-careers" th:style="'background-image: url(' + @{/images/A-images/JavaCaraseol.jpg} + ');'"></div>
+                        </div>
+                        <h3 style="text-align: center; margin-top: 10px; font-weight: bold; font-family: 'Times New Roman', Times, serif; color: maroon;">IT SERVICES</h3>
+                    </div>
+                </a>
+
+                <a th:href="@{/HRSERVICES.html}" class="service-link">
+                    <div>
+                        <div class="service-item from-right">
+                            <div class="container-careers-careers" th:style="'background-image: url(' + @{/images/A-images/hr.jpg} + ');'"></div>
+                        </div>
+                        <h3 style="text-align: center; margin-top: 10px; font-weight: bold; font-family: 'Times New Roman', Times, serif; color: maroon;">HR SERVICES</h3>
+                    </div>
+                </a>
+
+                <a th:href="@{/BPOSERVICES.html}" class="service-link">
+                    <div>
+                        <div class="service-item from-left">
+                            <div class="container-careers-careers" th:style="'background-image: url(' + @{/images/A-images/bpo.jpg} + ');'"></div>
+                        </div>
+                        <h3 style="text-align: center; margin-top: 10px; font-weight: bold; font-family: 'Times New Roman', Times, serif; color: maroon;">BPO SERVICES</h3>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </section>
+ 
+ 
+ 
+ 
+ <div class="backbone">
+    <h2 class="banner-title">
+        <span>Our</span> <span class="gradient-text">Capabilities</span>
+    </h2>
+</div>
+  <section class="about-abhishyandh">
+        <div class="flex-container123-abhishyandh-c">
+            <div class="row">
+                <div class="main-flex-box123-abhishyandh-c">
+                    <img th:src="@{/images/A-images/web development.jpeg}" alt="Web Development">
+                    <h2 style="font-family: 'Times New Roman', Times, serif; font-size: 1rem;">Web Development</h2>
+                    <div style="text-align: center; justify-content: space-around;">
+                        <p style="font-family: 'Times New Roman', Times, serif; font-size: 0.9rem;">
+                            We have a team of Web Developers with excellent designing and developing capabilities. They are specialized in front-end design to create intuitive and engaging user interfaces, with various frameworks and libraries.
+                        </p>
+                    </div>
+                </div>
+                <div class="main-flex-box123-abhishyandh-c">
+                    <img th:src="@{/images/A-images/javaaaa.jpeg}" alt="Java Development">
+                    <h2 style="font-family: 'Times New Roman', Times, serif; font-size: 1rem;">Java Development</h2>
+                    <p style="font-family: 'Times New Roman', Times, serif; font-size: 0.9rem;">
+                        Our team of Full Stack Java Developers possesses excellent coding capabilities. They are specialized and trained in back-end, server-related technologies, including frameworks, ORMs, data management technologies, and testing tools.
+                    </p>
+                </div>
+                <div class="main-flex-box123-abhishyandh-c">
+                    <img th:src="@{/images/A-images/python.jpg}" alt="Python Development">
+                    <h2 style="font-family: 'Times New Roman', Times, serif; font-size: 1rem;">Python Development</h2>
+                    <p style="font-family: 'Times New Roman', Times, serif; font-size: 0.9rem;">
+                        We have a team of Python Developers with excellent AI-based solution capabilities. They are specialized and trained in back-end and server-related technologies, including frameworks and AI-based solutions.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="main-flex-box123-abhishyandh-c">
+                    <img th:src="@{/images/A-images/supportprojects.jpg}" alt="Support Projects">
+                    <h2 style="font-family: 'Times New Roman', Times, serif; font-size: 1rem;">Support Projects</h2>
+                    <p style="font-family: 'Times New Roman', Times, serif; font-size: 0.9rem;">
+                        At Abhishyandh, we excel in supporting large-scale projects through strategic collaboration and expert execution. Our approach involves a series of well-defined steps to ensure we meet and exceed the needs of major clients.
+                    </p>
+                </div>
+                <div class="main-flex-box123-abhishyandh-c">
+                    <img th:src="@{/images/A-images/trainings.jpg}" alt="IT Trainings">
+                    <h2 style="font-family: 'Times New Roman', Times, serif; font-size: 1rem;">IT Trainings</h2>
+                    <p style="font-family: 'Times New Roman', Times, serif; font-size: 0.9rem;">
+                        We offer comprehensive IT training programs designed to equip individuals with the latest skills and knowledge in various technology domains, preparing them for successful careers in the ever-evolving tech industry.
+                    </p>
+                </div>
+                <div class="main-flex-box123-abhishyandh-c">
+                    <img th:src="@{/images/A-images/internship.jpeg}" alt="Internships">
+                    <h2 style="font-family: 'Times New Roman', Times, serif; font-size: 1rem;">Internships</h2>
+                    <p style="font-family: 'Times New Roman', Times, serif; font-size: 0.9rem;">
+                        We offer transformative internship opportunities that serve as a launchpad for aspiring tech professionals. Our immersive programs provide hands-on experience in building real-time projects.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<div class="body-why-shoose">
+        <div class="container-why-choose">
+            <h1>Why Choose Abhishyandh</h1>
+
+            <div class="services-row">
+                <div class="service" id="online-training">
+                    <div class="icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="description">
+                        <h2>Excellent Support</h2>
+                        <p>Our team of specialists excel in analyzing business processes & identifying blockages, to provide solutions, and constantly improve them.</p>
+                    </div>
+                </div>
+
+                <div class="service" id="classroom-training">
+                    <div class="icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="description">
+                        <h2>One-stop solution</h2>
+                        <p>We specialize in actualizing ideas and concepts, through ideation, product design, core system development, even system operation stages, leveraging our One-stop solution ecosystem for full-scope and comprehensive support.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="services-row">
+                <div class="service" id="project-support-training">
+                    <div class="icon">
+                        <i class="bi bi-code-slash"></i>
+                    </div>
+                    <div class="description">
+                        <h2>Talented resources</h2>
+                        <p>Our software company boasts a team of exceptionally talented professionals who form the backbone of our success. These skilled individuals bring a wealth of expertise in cutting-edge technologies, innovative problem-solving, and a passion for creating outstanding software solutions.</p>
+                    </div>
+                </div>
+
+                <div class="service" id="flexible-timings">
+                    <div class="icon">
+                        <i class="bi bi-shield-fill-plus"></i>
+                    </div>
+                    <div class="description">
+                        <h2>Website Security</h2>
+                        <p>We safeguard your website with robust protection against hacking attempts, ensuring your digital assets remain secure and uncompromised. Our team of skilled experts implements state-of-the-art security measures, including advanced firewalls and real-time threat detection systems.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="services-row">
+                <div class="service" id="high-qualified-trainers">
+                    <div class="icon">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <div class="description">
+                        <h2>Innovative Solutions Tailored For You</h2>
+                        <p>At Abhishyandh, we understand that every business is unique. Our team excels in crafting custom software solutions designed to meet your specific needs.</p>
+                    </div>
+                </div>
+
+                <div class="service" id="corporate-training">
+                    <div class="icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <div class="description">
+                        <h2>Client-Centric Approach</h2>
+                        <p>We believe in putting our clients at the heart of everything we do. Our customer-centric approach means we work closely with you throughout the project lifecycle.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-----------------projects section started---------------->
+    <section class="background-body-abhishyandh-p"  th:style="'background: url(' + @{/images/A-images/projectbgg.jpg} + ') no-repeat center center fixed;'">
+        <center>
+            <h2 class="banner-title">
+                <span style="color: white;">Our </span> <span class="gradient-text">Featured Projects</span>
+            </h2>
+        </center>
+        <p style="color: black; font-weight: bold; font-family: 'Times New Roman', Times, serif; text-align: center;">
+            We are grateful for the opportunity to provide technology solutions, contribute to our customers' success stories, and realize our full potential. We believe that with all of our attention to detail and originality in each product, we will be able to deliver more technology solutions to our clients, resulting in greater success.
+        </p>
+        <div class="container-flex-abhishyandh-p" id="projects">
+            <div class="container-wrapper-abhishyandh-p">
+                <div class="container-abhishyandh-p">
+                    <img th:src="@{/images/A-images/ecommerce.jpg}" alt="E-commerce Image">
+                    <div class="container-overlay-abhishyandh-p">
+                        <i class="fab fa-github"></i> <!-- GitHub icon -->
+                    </div>
+                </div>
+                <div class="title-abhishyandh-p">E-Shoppers - E-Commerce Website</div>
+            </div>
+
+            <div class="container-wrapper-abhishyandh-p">
+                <div class="container-abhishyandh-p">
+                    <img th:src="@{/images/A-images/hospital.jpg}" alt="Hospital Image">
+                    <div class="container-overlay-abhishyandh-p">
+                        <i class="fab fa-github"></i> <!-- GitHub icon -->
+                    </div>
+                </div>
+                <div class="title-abhishyandh-p">Sahet-O-Salamat - Hospital Website</div>
+            </div>
+
+            <div class="container-wrapper-abhishyandh-p">
+                <div class="container-abhishyandh-p">
+                    <img th:src="@{/images/A-images/bank.jpg}" alt="Banking Image">
+                    <div class="container-overlay-abhishyandh-p">
+                        <i class="fab fa-github"></i> <!-- GitHub icon -->
+                    </div>
+                </div>
+                <div class="title-abhishyandh-p">Banking Website</div>
+            </div>
+        </div>
+    </section>
+<!----Growth-->
+ <div class="body-Abhigrowth">
+        <div class="container-Abhigrowth">
+            <div class="content-Abhigrowth">
+                <div class="grow-h1">
+                    <h1>Grow Your Business</h1>
+                </div>
+                <div class="h2-growth">
+                    <h2>
+                        <span style="color: white;">With</span>
+                        <span style="color: #25D366;">Abhishyandh</span>
+                    </h2>
+                </div>
+                <div class="p-growth">
+                    <p style="color: white; font-family: 'Times New Roman', Times, serif; line-height: 1.6;">
+                        At Abhishyandh, We Provide A Wide Range Of Services Tailored To Meet The Diverse Needs Of Businesses In Every Industry. Our Expertise Allows Us To Deliver Innovative Solutions That Drive Success And Growth For Our Clients.
+                    </p>
+                </div>
+                <br>
+                <a th:href="@{/IT SERVICES.html}"><button class="button-growth">KNOW MORE</button></a>
+            </div>
+            <div class="image-container">
+                <img th:src="@{/images/A-images/growth.jpg}" alt="Growth Image" class="image">
+            </div>
+        </div>
+    </div>
+ 
+ 
+ <!--contact-->
+ <section id="contact-form-page">
+        <div class="body-contact">
+            <div class="container-contact">
+                <div class="left">
+                    <h2>Kick-start Your Next Project</h2>
+                    <h3>Abhishyandh Global Solutions Pvt Ltd</h3>
+                    <p>
+                        <i class="bi bi-phone" style="color: maroon;"></i>
+                        +91 8897830910
+                    </p>
+                    <p>
+                        <i class="bi bi-telephone-fill" style="color: green;"></i> 04066858189
+                    </p>
+                    <p>
+                        <i class="bi bi-clock-history" style="color: blue;"></i>
+                        Monday-Saturday (10:30AM to 7:30PM)
+                    </p>
+                    <p>
+                        <i class="bi bi-buildings" style="color: red;"></i>
+                        6th Floor, Niligiri block, ADITYA ENCLAVE, 605A, Kumar Basti, Ameerpet, Hyderabad, Telangana 500038
+                    </p>
+                    <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="blue" class="bi bi-envelope" viewBox="0 0 16 16">
+                        <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+                      </svg> info@abhishyandh.co.in</p>
+                    <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="blue" class="bi bi-envelope" viewBox="0 0 16 16">
+                        <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+                      </svg> hr@abhishyandh.co.in</p>
+                    <br>
+                    <div class="email-section">
+                        <input type="email" placeholder="Enter your business email">
+                        <a href="Contact-Abhishyandh.html"><button class="btn-contact">Subscribe</button></a>
+                    </div>
+                    <br>
+                    <button id="showMapButton" class="map-button">
+                        <i class="fas fa-map-marker-alt"></i> Reach us in Google Maps
+                    </button>
+                </div>
+                <div class="right">
+					<h2>Talk to Abhishyandh</h2>
+                    <form th:action="@{/contact}" method="post" th:object="${contactForm}">
+        <input type="text" id="name" name="name" th:field="*{name}" placeholder="Enter Your Name" required>
+        <input type="email" id="email"name="email" th:field="*{email}" placeholder="Enter Your Email Id" required>
+        <input type="text" id="phone" name="phone" th:field="*{phone}" placeholder="Enter Your Phone Number" required>
+        <input type="text" id="subject" name="subject" th:field="*{subject}" placeholder="Enter Your Purpose" required>
+        <select for="source">
+            <option value="How Did You Hear About Us?">How Did You Hear About Us?</option>
+            <option value="Google">Google</option>
+            <option value="LinkedIn">LinkedIn</option>
+            <option value="Instagram">Instagram</option>
+            <option value="Other">Other</option>
+        </select>
+         
+        <textarea id="message" name="message" th:field="*{message}" placeholder="Your Requirement" required></textarea>
+        <button type="submit">Start Building Your Application Today</button>
+    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  
+    
+    
+    
+<!----footer-->
+  <div class="Heading-Abhishyandh">
+        <h2>Abhishayndh Global Solutions Pvt Ltd</h2>
+    </div>
+    <div class="body-footer">
+    <main>
+         
+    </main>
+    <footer>
+        <div class="footer-wrapper">
+            <div class="footer-columns">
+                <div class="footer-logo-column">
+                     
+                     
+                     
+                </div>
+                <div class="link-columns">
+                    <div>
+                        <section>
+                            <h3>Our Company</h3>
+                            <ul>
+                               <li><a href="#" title="Features" th:href="@{/Website}">Home</a></li>
+                                    <li><a href="#" title="Auth" th:href="@{/AboutAbhishyandh}">About</a></li>
+                                    <li><a href="#" title="Functions" th:href="@{/ITSERVICES}">Services</a></li>
+                                    <li><a href="#" title="Realtime" th:href="@{/ITSERVICES}">Capabilities</a></li>
+                                    <li><a href="#" title="Storage" th:href="@{/ITTRAININGS}">Trainings</a></li>
+                                    <li><a href="#" title="Vector" th:href="@{/Careers}">Careers</a></li>
+                                    <li><a href="#" title="Pricing" th:href="@{/Website}">Contact Us</a></li>
+                            </ul>
+                        </section>
+
+                        <section>
+                            <h3>Resources</h3>
+                            <ul>
+                                 <li><a href="#" title="Support" th:href="@{/ITSERVICES}">Web Projects</a></li>
+                                    <li><a href="#" title="Sitemap" th:href="@{/ITSERVICES}">Java Projects</a></li>
+                                    <li><a href="#" title="Newsletter" th:href="@{/ITSERVICES}">Python Projects</a></li>
+                                    <li><a href="#" title="Help Centre" th:href="@{/ITSERVICES}">Support Projects</a></li>
+                                    <li><a href="#" title="Investor" th:href="@{/ITTRAININGS}">IT Trainings</a></li>
+                                    <li><a href="#" title="Investor" th:href="@{/HRSERVICES}">HR Services</a></li>
+                                    <li><a href="#" title="Investor" th:href="@{/BPOSERVICES}">BPO Services</a></li>
+                            </ul>
+                        </section>
+                    </div>
+                    <div>
+                        <section>
+                            <h3>Technologies</h3>
+                            <ul>
+                                <li><a href="#" title="Documentation">Java Developers</a></li>
+                                    <li><a href="#" title="Changelog">React Js Developers</a></li>
+                                    <li><a href="#" title="Contributing">Web Developers</a></li>
+                                    <li><a href="#" title="OpenSource">Mobile Application Developers</a></li>
+                                    <li><a href="#" title="SupaSquad">Full Stack Java Developers</a></li>
+                                    <li><a href="#" title="DevTo">Mern Stack Developers</a></li>
+                                    <li><a href="#" title="RSS">Full Stack Python Developers</a></li>
+                            </ul>
+                        </section>
+                        <section>
+                            <h3>Reach us</h3>
+                            <ul>
+                               <li><a href="#" title="Terms and services">+91 8897830910</a></li>
+                                    <li><a href="#" title="Privacy Policy">040-6685-8189</a></li>
+                                    <li><a href="mailto:info@abhishyandh.co.in" title="Careers">info@abhishyandh.co.in</a></li>
+                                    <li><a href="mailto:hr@abhishyandh.co.in" title="Company">hr@abhishyandh.co.in</a></li>
+                                    <li><a href="https://abhishyandh.co.in" title="Terms Of Service">https://abhishyandh.co.in</a></li>
+                                    <li><a href="#contact-form-page" title="Privacy Policy">Get in Touch</a></li>
+                            </ul>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <div class="h1-follow">
+            <center><h1>Follow Us</h1></center>
+         </div>
+        <div class="social-wrapper">
+                         
+            <div class='social-links'>
+                <ul>
+                    <li>
+                        <a th:href="@{https://www.linkedin.com/company/abhishyandh-global-solutions/}" target="_blank" title="linkedin">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="blue" class="bi bi-linkedin" viewBox="0 0 16 16">
+  <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+</svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a th:href="@{https://github.com/AbhiFlash-Coder}" target="_blank" title="GitHub">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                class="icon icon-tabler icon-tabler-brand-github" width="24" height="24"
+                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path
+                                    d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a  th:href="@{https://www.instagram.com/abhishyandh?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==}" target="_blank" title="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="maroon" class="bi bi-instagram" viewBox="0 0 16 16">
+  <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+</svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a th:href="@{https://www.facebook.com/share/BxpiEC8qP9PP6ycj/?mibextid=qi2Omg}" title="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="blue" class="bi bi-facebook" viewBox="0 0 16 16">
+  <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+</svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- bottom part section -->
+        <div class="footer-bottom">
+            <div class="footer-bottom-wrapper">
+                <small>© <span id="year"></span> Abhishayndh Global Solutions.</small>
+            </div>
+        </div>
+    </footer>
+    </div>
+    
+<!--whatsApp button popup-->
+<div id="whatsapp-button" class="whatsapp-button">
+    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="white" class="whatsapp-icon" viewBox="0 0 16 16">
+        <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+    </svg>
+</div>
+
+<!-- WhatsApp Popup -->
+<div id="whatsapp-popup" class="whatsapp-popup">
+    <p style="font-family: 'Times New Roman', Times, serif;">Welcome to Abhishayndh Global Solutions Pvt Ltd</p>
+    <p>Hi! How can we assist you today?</p>
+    <textarea id="message-textarea" placeholder="Enter your Requirement"></textarea>
+    <button id="send-button">Send Message</button>
+
+    <center><h3>Or</h3></center>
+    <a id="whatsapp-link" href="#">
+        <button class="btn-whatsapp">Chat with Abhishayndh</button>
+    </a>
+</div>  
+    
+    
+    
+    
+    <script>
+		 document.getElementById("year").innerHTML = new Date().getFullYear();
+	</script>
+<script>
+	
+	//map
+document.getElementById('showMapButton').addEventListener('click', function() {
+    // Your company's Google Maps URL
+    var mapUrl = "https://maps.app.goo.gl/Citcbe4UpCMH99176";
+    
+    // Open the map in a new tab
+    window.open(mapUrl, '_blank');
+});
+	
+	
+	
+//whatsapp button
+document.addEventListener('DOMContentLoaded', function() {
+            const button = document.getElementById('whatsapp-button');
+            const popup = document.getElementById('whatsapp-popup');
+            const sendButton = document.getElementById('send-button');
+            const textarea = document.getElementById('message-textarea');
+
+            button.addEventListener('click', function() {
+                popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
+            });
+
+            sendButton.addEventListener('click', function() {
+                
+                const message = encodeURIComponent(textarea.value.trim());
+
+                if (message) {
+                    
+                    const phoneNumber = '8179645680';  
+                    window.location.href = `https://wa.me/${phoneNumber}?text=${message}`;
+                }
+            });
+
+            
+            document.addEventListener('click', function(event) {
+                if (!button.contains(event.target) && !popup.contains(event.target)) {
+                    popup.style.display = 'none';
+                }
+            });
+        });
+
+	
+//navbar	
+	
+	 document.querySelectorAll('.dropdown-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.parentElement.nextElementSibling;
+                answer.classList.toggle('show');
+                button.textContent = answer.classList.contains('show') ? '▲' : '▼';
+            });
+        });
+
+
+
+        //hamburger
+document.addEventListener('DOMContentLoaded', function() {
+    const burgerMenu = document.querySelector('.burger-menu-abhishyandh-N');
+    const mobileMenu = document.querySelector('.navigation-abhishyandh-N');
+    const dropdownButtons = document.querySelectorAll('.navigation-abhishyandh-N > li > button');
+
+    if (burgerMenu && mobileMenu) {
+        burgerMenu.addEventListener('click', function() {
+            mobileMenu.classList.toggle('show');
+        });
+    }
+
+    dropdownButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            const dropdown = this.nextElementSibling;
+            if (dropdown) {
+                e.preventDefault();
+                dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+                
+                // Close other open dropdowns
+                dropdownButtons.forEach(otherButton => {
+                    if (otherButton !== this) {
+                        const otherDropdown = otherButton.nextElementSibling;
+                        if (otherDropdown) {
+                            otherDropdown.style.display = 'none';
+                        }
+                    }
+                });
+            }
+        });
+    });
+
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.navigation-abhishyandh-N')) {
+            document.querySelectorAll('.dropdown-abhishyandh-N').forEach(dropdown => {
+                dropdown.style.display = 'none';
+            });
+        }
+    });
+
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+            if (mobileMenu) {
+                mobileMenu.classList.remove('show');
+            }
+            document.querySelectorAll('.dropdown-abhishyandh-N').forEach(dropdown => {
+                dropdown.style.display = '';
+            });
+        }
+    });
+});
+
+
+
+//about
+document.addEventListener('scroll', function() {
+    const aboutSection = document.querySelector('.about-content-abhishyandh');
+    const textContainer = document.querySelector('.about-text-abhishyandh');
+    const imageContainer = document.querySelector('.about-image-abhishyandh');
+    
+    const sectionTop = aboutSection.getBoundingClientRect().top;
+    const viewportHeight = window.innerHeight;
+    
+    // Trigger animation when the section is in view
+    if (sectionTop < viewportHeight * 0.8) {
+        textContainer.style.transform = 'translateX(0)';
+        textContainer.style.opacity = '1';
+        imageContainer.style.transform = 'translateX(0)';
+        imageContainer.style.opacity = '1';
+    }
+});
+
+
+
+//services
+document.addEventListener('DOMContentLoaded', function() {
+            const serviceItems = document.querySelectorAll('.service-item');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observerCallback = (entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            };
+
+            const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+            serviceItems.forEach(item => {
+                observer.observe(item);
+            });
+        });
+
+//capabilities
+document.addEventListener('DOMContentLoaded', () => {
+            const boxes = document.querySelectorAll('.main-flex-box123-abhishyandh-c');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add('visible');
+                        }, index * 100);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            boxes.forEach(box => observer.observe(box));
+
+            // Fallback to ensure all boxes become visible
+            setTimeout(() => {
+                boxes.forEach(box => {
+                    if (!box.classList.contains('visible')) {
+                        box.classList.add('visible');
+                    }
+                });
+            }, 2000);
+        });
+        
+          //why choose Abhishyandh
+        
+document.addEventListener("DOMContentLoaded", function() {
+    const items = document.querySelectorAll('.why-item');
+
+    function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+
+    function handleScroll() {
+        items.forEach((item, index) => {
+            if (isInViewport(item)) {
+                if (!item.classList.contains('visible-left') && !item.classList.contains('visible-right')) {
+                    // Apply animations based on the position of the item
+                    if (index % 2 === 0) {
+                        item.classList.add('visible-left');
+                    } else {
+                        item.classList.add('visible-right');
+                    }
+                }
+            }
+        });
+    }
+
+    // Apply animations on page load if elements are already in view
+    handleScroll();
+
+    // Handle scroll events
+    window.addEventListener('scroll', handleScroll);
+});
+
+//Navbar scroll
+document.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.menu__wrapper-abhishyandh-N');
+            if (window.scrollY > 0) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+         //why choose abhishyandh
+        window.addEventListener('scroll', () => {
+            const services = document.querySelectorAll('.service');
+            services.forEach(service => {
+                const rect = service.getBoundingClientRect();
+                if (rect.top < window.innerHeight * 0.8) {
+                    service.classList.add('visible');
+                }
+            });
+        });
+        
+//Home page design
+let nextButton = document.getElementById('next');
+let prevButton = document.getElementById('prev');
+let carousel = document.querySelector('.carousel');
+let listHTML = document.querySelector('.carousel .list');
+let seeMoreButtons = document.querySelectorAll('.seeMore');
+let backButton = document.getElementById('back');
+
+nextButton.onclick = function(){
+    showSlider('next');
+}
+prevButton.onclick = function(){
+    showSlider('prev');
+}
+let unAcceppClick;
+const showSlider = (type) => {
+    nextButton.style.pointerEvents = 'none';
+    prevButton.style.pointerEvents = 'none';
+
+    carousel.classList.remove('next', 'prev');
+    let items = document.querySelectorAll('.carousel .list .item');
+    if(type === 'next'){
+        listHTML.appendChild(items[0]);
+        carousel.classList.add('next');
+    }else{
+        listHTML.prepend(items[items.length - 1]);
+        carousel.classList.add('prev');
+    }
+    clearTimeout(unAcceppClick);
+    unAcceppClick = setTimeout(()=>{
+        nextButton.style.pointerEvents = 'auto';
+        prevButton.style.pointerEvents = 'auto';
+    }, 2000)
+}
+seeMoreButtons.forEach((button) => {
+    button.onclick = function(){
+        carousel.classList.remove('next', 'prev');
+        carousel.classList.add('showDetail');
+    }
+});
+backButton.onclick = function(){
+    carousel.classList.remove('showDetail');
+}
+
+
+
+ //contact menu to contact form
+ document.addEventListener('DOMContentLoaded', function() {
+    const contactLink = document.querySelector('.contact-link');
+    
+    if (contactLink) {
+        contactLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            const contactSection = document.getElementById('contact-form-page');
+            if (contactSection) {
+                contactSection.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    }
+});
+/*]]>*/
+
+</script>
+    
+</body>
+</html>
