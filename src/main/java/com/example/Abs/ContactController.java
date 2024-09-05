@@ -156,6 +156,21 @@ public class ContactController {
     }
     
     
+    @GetMapping("/Angular")
+    public String Angular(Model model) {
+    	return "Angular";
+    }
+    
+    @GetMapping("/React")
+    public String React(Model model) {
+    	return "ReactJs";
+    }
+    
+    @GetMapping("/ionic")
+    public String Ionic(Model model) {
+    	return "Ionic";
+    }
+    
     @GetMapping("/Hr/recruitmentservice")
     public String RecruitmentService(Model model) {
     return "RecruitmentService";

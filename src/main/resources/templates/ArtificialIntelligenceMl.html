@@ -976,6 +976,9 @@ width: 33%;
                     <a th:href="@{/DotNetCourse}" style="color: black;">Dot Net Course</a>
                     <a th:href="@{/PowerBi}" style="color: black;">Power BI</a>
                     <a th:href="@{/ArtificialIntelligenceMl}" style="color: black;">Artificial Intelligence / Machine Learning</a>
+                   <a th:href="@{/Angular}" style="color: black;">Angular</a>
+                    <a th:href="@{/React}" style="color: black;">ReactJs</a>
+                    <a th:href="@{/ionic}" style="color: black;">Ionic</a>
                 </div>
             </div> <span style="color: white;">|</span>  
             <div class="dropdown">
@@ -1158,8 +1161,7 @@ width: 33%;
 
     <!-- Footer Section -->
      <div class="padding" style="padding: 30px;"></div>
-
-    <section> 
+<section> 
         <div class="dummy_page" id="footer">
             <h3 style="color: white;">Abhishyandh Global Solutions Pvt Ltd</h3>
         </div>
@@ -1175,7 +1177,7 @@ width: 33%;
                         <li>IT Services</li>
                         <li>Hr Services</li>
                         <li>BPO Services</li>
-                        <a href="Contact-Abhishyandh.html"><li>Get In Touch</li></a>
+                        <li><a th:href="@{/Website}"><li>Get In Touch</li></a></li>
                     </ul>
                 </div>
                 <div class="col">
@@ -1186,7 +1188,7 @@ width: 33%;
                         <li>Java Development</li>
                         <li>Python Development</li>
                         <li>Mobile Development</li>
-                        <a href="Contact-Abhishyandh.html"><li>Get In Touch</li></a>
+ 						<li><a th:href="@{/Website}"><li>Get In Touch</li></a></li>
                         
                     </ul>
                 </div>
@@ -1198,7 +1200,7 @@ width: 33%;
                         <li>040-6685-8189</li>
                         <li>info@abhishyandh.co.in</li>
                         <li>https://abhishyandh.co.in</li>
-                        <a href="Contact-Abhishyandh.html"><li>Get In Touch</li></a>
+                        <li><a th:href="@{/Website}"><li>Get In Touch</li></a></li>
                     </ul>
                 </div>
                 <div class="col">
@@ -1208,7 +1210,7 @@ width: 33%;
                         <li>Web Mails</li>
                         <li>hr@abhishyandh.co.in</li>
                         <li>info@abhishyandh.co.in</li>
-                        <a href="Contact-Abhishyandh.html"><li>Get In Touch</li></a>
+                       <li><a th:href="@{/Website}"><li>Get In Touch</li></a></li>
                     </ul>
                 </div>
                 <div class="col">
@@ -1220,7 +1222,7 @@ width: 33%;
                         <li>Instagram</li>
                         <li>Youtube</li>
                         <li>FaceBook</li>
-                        <a href="Contact-Abhishyandh.html"><li>Get In Touch</li></a>
+                        <li><a th:href="@{/Website}"><li>Get In Touch</li></a></li>
                     </ul>
                 </div>
                      <div class="col">
@@ -1228,12 +1230,12 @@ width: 33%;
                     <h1 style="color: black;">Follow Us On</h1>
                     <ul>
                         <p class="social-media">
-                            <a href="https://www.linkedin.com/company/abhishyandh-global-solutions/"><i class="bi bi-linkedin text-dark mx-1"></i></a>
-                            <a href="https://github.com/AbhiFlash-Coder"><i class="bi bi-github text-dark-mx-1"></i></a>
-                            <a href=""><i class="bi bi-twitter text-dark mx-1"></i></a>
-                            <a href="https://www.facebook.com/share/BxpiEC8qP9PP6ycj/?mibextid=qi2Omg"><i class="bi bi-facebook text-dark mx-1"></i></a>
-                            <a href="https://www.instagram.com/abhishyandh?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="bi bi-instagram text-dark mx-1"></i></a>
-                            <a href-""><i class="bi bi-youtube text-dark mx-1"></i></a>
+                            <a th:href="@{https://www.linkedin.com/company/abhishyandh-global-solutions/}"><i class="bi bi-linkedin text-dark mx-1"></i></a>
+                            <a th:href="@{https://github.com/AbhiFlash-Coder}"><i class="bi bi-github text-dark-mx-1"></i></a>
+                            
+                            <a th:href="@{https://www.facebook.com/share/BxpiEC8qP9PP6ycj/?mibextid=qi2Omg}"><i class="bi bi-facebook text-dark mx-1"></i></a>
+                            <a th:href="@{https://www.instagram.com/abhishyandh?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==}"><i class="bi bi-instagram text-dark mx-1"></i></a>
+                             
                           
                         </p>  
                     </ul>
@@ -1245,6 +1247,7 @@ width: 33%;
             </div>
         </div>
     </section>
+
 
     <div class="copyright-abhishyandh">
         <p>&copy; 2023 Abhishyandh. All rights reserved.</p>
